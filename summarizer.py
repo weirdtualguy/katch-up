@@ -9,11 +9,10 @@ from google.genai import types
 
 FORUM_BASE = "https://kas-smiths.org"
 DATA_FILE = "data.json"
-MAX_ITEMS = 60  # Retain rolling 60 summaries
+MAX_ITEMS = 60
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 def clean_html(raw_html: str) -> str:
-    """Removes HTML tags and normalizes whitespace."""
     if not raw_html:
         return ""
     text = re.sub(r"<[^>]+>", " ", raw_html)
@@ -23,13 +22,18 @@ def load_data():
     if os.path.exists(DATA_FILE):
         try:
             with open(DATA_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+                # Filter out previous failed placeholder summaries so they get regenerated
+                data["topics"] = [
+                    t for t in data.get("topics", [])
+                    if "unavailable" not in t.get("summary", "").lower()
+                ]
+                return data
         except Exception:
             return {"topics": []}
     return {"topics": []}
 
 def save_data(data):
-    # Keep rolling latest entries
     data["topics"] = data["topics"][:MAX_ITEMS]
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -42,27 +46,38 @@ Discussion Excerpt:
 {text}
 
 Instructions:
-1. Explain what happened/was discussed in 2 to 3 simple, friendly, jargon-free sentences.
+1. Explain what happened or was discussed in 2 to 3 simple, friendly, jargon-free sentences.
 2. Highlight why it matters or what the consensus/solution is.
-3. Do not start with 'This thread is about' or conversational filler."""
+3. Do not start with conversational filler."""
 
-    for attempt in range(3):
-        try:
-            response = client.models.generate_content(
-                model="gemini-2.5-flash-lite",
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.3,
-                    max_output_tokens=200,
-                ),
-            )
-            return response.text.strip()
-        except Exception as e:
-            if "429" in str(e) or "ResourceExhausted" in str(e):
-                time.sleep(10 * (attempt + 1))
-            else:
-                return "Summary unavailable at this time."
-    return "Summary unavailable due to temporary rate limits."
+    # Models to attempt in order of preference
+    candidate_models = [
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-2.5-flash-lite"
+    ]
+
+    for model_name in candidate_models:
+        for attempt in range(2):
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.3,
+                        max_output_tokens=250,
+                    ),
+                )
+                if response.text:
+                    return response.text.strip()
+            except Exception as e:
+                print(f"[Warn] Model {model_name} attempt {attempt+1} failed: {e}")
+                if "429" in str(e) or "ResourceExhausted" in str(e):
+                    time.sleep(5 * (attempt + 1))
+                else:
+                    break
+
+    return "Summary unavailable at this time."
 
 def fetch_and_process():
     if not GEMINI_API_KEY:
@@ -71,9 +86,8 @@ def fetch_and_process():
     client = genai.Client(api_key=GEMINI_API_KEY)
     headers = {"User-Agent": "KasSmithsDigestBot/1.0"}
     
-    # 1. Fetch latest topics list
     resp = requests.get(f"{FORUM_BASE}/latest.json", headers=headers, timeout=15)
-    resp.raise_for_api_code() if hasattr(resp, "raise_for_api_code") else resp.raise_for_status()
+    resp.raise_for_status()
     latest_data = resp.json()
     
     topics_meta = latest_data.get("topic_list", {}).get("topics", [])
@@ -90,13 +104,11 @@ def fetch_and_process():
         like_count = t.get("like_count", 0)
         views = t.get("views", 0)
         
-        # Calculate hotness metric based on views and engagement
         is_hot = post_count >= 8 or like_count >= 10 or views >= 300
 
         if topic_id in existing_ids:
             continue
 
-        # 2. Fetch specific thread posts
         thread_resp = requests.get(f"{FORUM_BASE}/t/{topic_id}.json", headers=headers, timeout=15)
         if thread_resp.status_code != 200:
             continue
@@ -106,7 +118,6 @@ def fetch_and_process():
         if not posts:
             continue
 
-        # Combine OP + top 2 responses (truncated to 2,000 chars total)
         combined_text = []
         op_text = clean_html(posts[0].get("cooked", ""))
         combined_text.append(f"Original Post: {op_text[:1200]}")
@@ -119,7 +130,7 @@ def fetch_and_process():
         full_thread_sample = "\n".join(combined_text)[:2000]
 
         summary = summarize_thread(client, title, full_thread_sample)
-        time.sleep(2)  # Guard spacing for free-tier rate limits
+        time.sleep(2)
 
         new_summaries.append({
             "id": topic_id,
@@ -133,16 +144,12 @@ def fetch_and_process():
         })
 
     if new_summaries:
-        # Prepend new summaries so newest are first
         data_store["topics"] = new_summaries + data_store["topics"]
         save_data(data_store)
 
     generate_html(data_store["topics"])
 
 def generate_html(topics):
-    # Partition hottest topics for the top section
-    hot_topics = [t for t in topics if t.get("is_hot")][:3]
-    
     cards_html = ""
     for t in topics:
         hot_badge = '<span class="badge">🔥 Hot Discussion</span>' if t.get("is_hot") else ''
