@@ -173,15 +173,17 @@ def fetch_and_process():
     generate_html(data_store["topics"])
     generate_rss(data_store["topics"])
 
-    # Output GitHub Step Summary
+        # Output GitHub Step Summary
     gh_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if gh_summary and new_summaries:
-        summary_lines = [
-            f"- **{t['title']}**: {'⚠️ fallback' if 'unavailable' in t['summary'].lower() else f'✅ ({t.get("model", "unknown")})'}"
-            for t in new_summaries
-        ]
+        summary_lines = []
+        for t in new_summaries:
+            status = "⚠️ fallback" if "unavailable" in t["summary"].lower() else f"✅ ({t.get('model', 'unknown')})"
+            summary_lines.append(f"- **{t['title']}**: {status}")
+            
         with open(gh_summary, "a", encoding="utf-8") as f:
             f.write("## Digest Run Summary\n" + "\n".join(summary_lines) + "\n")
+
 
 def generate_rss(topics):
     items = ""
