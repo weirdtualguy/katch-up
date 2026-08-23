@@ -14,7 +14,6 @@ MAX_NEW_PER_RUN = int(os.environ.get("MAX_NEW_PER_RUN", 10))
 MIN_SECONDS_BETWEEN_CALLS = 4.5
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 
-# --- 1. Robust HTML Parsing (Audit Issue #2) ---
 class _TextExtractor(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -38,7 +37,6 @@ def clean_html(raw_html: str) -> str:
     text = html_lib.unescape(" ".join(parser.chunks))
     return " ".join(text.split())
 
-# --- Data Management ---
 def load_data():
     if os.path.exists(DATA_FILE):
         try:
@@ -58,26 +56,18 @@ def save_data(data):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-# --- AI Summarization with Retries & JSON Schema (Audit Issues #4 & #7) ---
-def _is_retryable(status_code: int) -> bool:
-    return status_code in (429, 500, 503)
-
-def summarize_thread(topic_title: str, text: str) -> str:
+def summarize_thread(topic_title: str, text: str) -> tuple:
+    """Returns a tuple of (summary_string, model_used_string)"""
     if not GEMINI_API_KEY:
-        return "Summary unavailable: missing API key."
+        return "Summary unavailable: missing API key.", "none"
 
-    prompt = (
-        f"Topic Title: {topic_title}\n\n"
-        f"Discussion Excerpt:\n{text}\n"
-    )
-
+    prompt = f"Topic Title: {topic_title}\n\nDiscussion Excerpt:\n{text}\n"
     models = ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]
     
     for model in models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
         headers = {"Content-Type": "application/json"}
         
-        # Enforcing JSON output to prevent conversational filler
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -89,7 +79,7 @@ def summarize_thread(topic_title: str, text: str) -> str:
                     "properties": {
                         "summary": {
                             "type": "STRING",
-                            "description": "2-3 plain-language sentences summarizing the thread. No greetings, no filler, no restating the title."
+                            "description": "2-3 plain-language sentences summarizing the thread. No greetings, no filler."
                         }
                     },
                     "required": ["summary"]
@@ -105,31 +95,29 @@ def summarize_thread(topic_title: str, text: str) -> str:
                     candidates = result.get("candidates", [])
                     if candidates:
                         raw_json = candidates[0]["content"]["parts"][0]["text"]
-                        return json.loads(raw_json).get("summary", "").strip()
+                        return json.loads(raw_json).get("summary", "").strip(), model
                 elif resp.status_code == 404:
-                    break # Model not found, skip to next model
-                elif _is_retryable(resp.status_code) and attempt < 2:
+                    break 
+                elif resp.status_code in (429, 500, 503) and attempt < 2:
                     time.sleep((2 ** attempt) + random.uniform(0, 1))
                     continue
                 else:
-                    break # Other error, break attempt loop
-            except Exception as ex:
+                    break 
+            except Exception:
                 if attempt < 2:
                     time.sleep((2 ** attempt) + random.uniform(0, 1))
                     continue
                 break
 
-    return "Summary unavailable at this time."
+    return "Summary unavailable at this time.", "none"
 
-# --- Core Pipeline (Audit Issue #8) ---
 def fetch_and_process():
     headers = {"User-Agent": "KasSmithsDigestBot/1.0"}
     
     resp = requests.get(f"{FORUM_BASE}/latest.json", headers=headers, timeout=15)
     resp.raise_for_status()
-    latest_data = resp.json()
+    topics_meta = resp.json().get("topic_list", {}).get("topics", [])
     
-    topics_meta = latest_data.get("topic_list", {}).get("topics", [])
     data_store = load_data()
     existing_ids = {t["id"] for t in data_store.get("topics", [])}
 
@@ -141,14 +129,6 @@ def fetch_and_process():
             break
             
         topic_id = t.get("id")
-        title = t.get("title", "")
-        slug = t.get("slug", "")
-        post_count = t.get("posts_count", 1)
-        like_count = t.get("like_count", 0)
-        views = t.get("views", 0)
-        
-        is_hot = post_count >= 8 or like_count >= 10 or views >= 300
-
         if topic_id in existing_ids:
             continue
 
@@ -168,20 +148,20 @@ def fetch_and_process():
 
         full_thread_sample = "\n".join(combined_text)[:2000]
 
-        summary = summarize_thread(title, full_thread_sample)
+        summary, model_used = summarize_thread(t.get("title", ""), full_thread_sample)
         processed += 1
         time.sleep(MIN_SECONDS_BETWEEN_CALLS)
 
-        # Store ISO timestamp alongside readable date
         now_utc = datetime.now(timezone.utc)
         new_summaries.append({
             "id": topic_id,
-            "title": title,
-            "url": f"{FORUM_BASE}/t/{slug}/{topic_id}",
+            "title": t.get("title", ""),
+            "url": f"{FORUM_BASE}/t/{t.get('slug', '')}/{topic_id}",
             "summary": summary,
-            "posts_count": post_count,
-            "views": views,
-            "is_hot": is_hot,
+            "model": model_used,
+            "posts_count": t.get("posts_count", 1),
+            "views": t.get("views", 0),
+            "is_hot": (t.get("posts_count", 1) >= 8 or t.get("like_count", 0) >= 10 or t.get("views", 0) >= 300),
             "iso_date": now_utc.isoformat(),
             "updated_at": now_utc.strftime("%b %d, %Y %H:%M UTC")
         })
@@ -191,15 +171,60 @@ def fetch_and_process():
         save_data(data_store)
 
     generate_html(data_store["topics"])
+    generate_rss(data_store["topics"])
 
-# --- Secure & Accessible HTML Generation (Audit Issues #1, #10, #11) ---
+    # Output GitHub Step Summary
+    gh_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if gh_summary and new_summaries:
+        summary_lines = [
+            f"- **{t['title']}**: {'⚠️ fallback' if 'unavailable' in t['summary'].lower() else f'✅ ({t.get("model", "unknown")})'}"
+            for t in new_summaries
+        ]
+        with open(gh_summary, "a", encoding="utf-8") as f:
+            f.write("## Digest Run Summary\n" + "\n".join(summary_lines) + "\n")
+
+def generate_rss(topics):
+    items = ""
+    for t in topics:
+        safe_title = html_lib.escape(t['title'])
+        safe_url = html_lib.escape(t['url'])
+        safe_summary = html_lib.escape(t['summary'])
+        
+        # Format date for RSS (RFC 822)
+        try:
+            dt = datetime.fromisoformat(t['iso_date'])
+            rfc_date = dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
+        except:
+            rfc_date = ""
+
+        items += f"""
+        <item>
+            <title>{safe_title}</title>
+            <link>{safe_url}</link>
+            <description>{safe_summary}</description>
+            <guid isPermaLink="true">{safe_url}</guid>
+            <pubDate>{rfc_date}</pubDate>
+        </item>"""
+
+    rss_content = f"""<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>Kas-Smiths Forum Digest</title>
+    <link>https://weirdtualguy.github.io/katch-up/</link>
+    <description>Daily digest of hot discussions</description>
+    {items}
+</channel>
+</rss>"""
+
+    with open("feed.xml", "w", encoding="utf-8") as f:
+        f.write(rss_content)
+
 def generate_html(topics):
     cards_html = ""
     for t in topics:
         hot_badge = '<span class="badge">🔥 Hot Discussion</span>' if t.get("is_hot") else ''
         iso_date = t.get('iso_date', '')
         
-        # Using html.escape to prevent XSS injection
         safe_url = html_lib.escape(t['url'])
         safe_title = html_lib.escape(t['title'])
         safe_summary = html_lib.escape(t['summary'])
@@ -230,81 +255,44 @@ def generate_html(topics):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A daily digest of hot discussions from the Kas-Smiths forum.">
+    <meta property="og:title" content="Kas-Smiths Forum Digest">
+    <meta property="og:description" content="What happened while you were away, explained in simple terms.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="alternate" type="application/rss+xml" title="Kas-Smiths Digest RSS" href="feed.xml">
     <title>Kas-Smiths Daily Digest</title>
     <style>
         :root {{
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #cbd5e1;
-            --primary: #38bdf8;
-            --accent: #f97316;
-            --border: #334155;
+            --bg: #0f172a; --surface: #1e293b; --text-main: #f8fafc; --text-muted: #cbd5e1;
+            --primary: #38bdf8; --accent: #f97316; --border: #334155;
         }}
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            margin: 0;
-            padding: 16px;
-            display: flex;
-            justify-content: center;
-        }}
+        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text-main); margin: 0; padding: 16px; display: flex; justify-content: center; }}
         .container {{ max-width: 680px; width: 100%; }}
-        header {{ margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }}
+        header {{ margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; }}
         h1 {{ margin: 0 0 6px 0; font-size: 1.5rem; }}
         .tagline {{ color: var(--text-muted); font-size: 0.9rem; margin: 0; }}
-        .card {{
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-        }}
-        .card-link {{
-            display: block;
-            padding: 16px;
-            color: inherit;
-            text-decoration: none;
-            border-radius: 12px;
-        }}
-        .card-link:focus-visible {{
-            outline: 2px solid var(--primary);
-            outline-offset: 3px;
-        }}
-        .card-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.75rem;
-        }}
-        .badge {{
-            background: rgba(249, 115, 22, 0.2);
-            color: var(--accent);
-            padding: 2px 8px;
-            border-radius: 99px;
-            font-weight: bold;
-        }}
+        .rss-link {{ color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }}
+        .rss-link:hover {{ color: var(--accent); }}
+        .card {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2); }}
+        .card-link {{ display: block; padding: 16px; color: inherit; text-decoration: none; border-radius: 12px; }}
+        .card-link:focus-visible {{ outline: 2px solid var(--primary); outline-offset: 3px; }}
+        .card-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.75rem; }}
+        .badge {{ background: rgba(249, 115, 22, 0.2); color: var(--accent); padding: 2px 8px; border-radius: 99px; font-weight: bold; }}
         .date {{ color: var(--text-muted); margin-left: auto; font-weight: 500; }}
         h2 {{ margin: 0 0 10px 0; font-size: 1.15rem; line-height: 1.35; color: var(--primary); }}
         .card-link:hover h2 {{ text-decoration: underline; }}
         .summary {{ margin: 0 0 12px 0; color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; }}
-        .card-footer {{
-            display: flex;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 8px;
-        }}
+        .card-footer {{ display: flex; align-items: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; }}
     </style>
 </head>
 <body>
     <main class="container">
         <header>
-            <h1>⚡ Kas-Smiths Forum Digest</h1>
-            <p class="tagline">What happened while you were away, explained in simple terms.</p>
+            <div>
+                <h1>⚡ Kas-Smiths Forum Digest</h1>
+                <p class="tagline">What happened while you were away, explained in simple terms.</p>
+            </div>
+            <a href="feed.xml" class="rss-link" aria-label="RSS Feed">📶 RSS</a>
         </header>
         {cards_html}
     </main>
