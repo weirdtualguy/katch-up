@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>Kas-Smiths Forum Digest</title>
+    <link>https://weirdtualguy.github.io/katch-up/</link>
+    <description>Daily digest of hot discussions</description>
+    
+        <item>
+            <title>Welcome to Kas Smiths! :wave:</title>
+            <link>https://kas-smiths.org/t/welcome-to-kas-smiths/5</link>
+            <description>A new community workshop called &quot;Kas Smiths&quot; has been launched for people to collaborate on tools, wallets, and apps built on the Kaspa network. A community member responded enthusiastically, noting it will be especially helpful for connecting smaller, independent developers. 
+
+This matters because it provides a dedicated, practical space where people can pitch ideas, test them out, and build the future of Kaspa together.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/welcome-to-kas-smiths/5</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Fungible Token Covenant Specification (KCC20)</title>
+            <link>https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</link>
+            <description>Kaspa developers are discussing a new rulebook called &quot;KCC20&quot; to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing. 
+
+This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>REST API drops compute_budget for v1 transactions on testnet-10</title>
+            <link>https://kas-smiths.org/t/rest-api-drops-compute-budget-for-v1-transactions-on-testnet-10/108</link>
+            <description>A developer building a token project on the testnet ran into an error where the system ignored their custom transaction budgets, causing their submissions to fail. Other users pointed out that bypassing the public web interface and connecting directly to the node solves the problem, and noted that a code fix is already in the works to permanently resolve these glitches.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/rest-api-drops-compute-budget-for-v1-transactions-on-testnet-10/108</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>This is magic... sharing a moment that brings me great joy</title>
+            <link>https://kas-smiths.org/t/this-is-magic-sharing-a-moment-that-brings-me-great-joy/129</link>
+            <description>A developer shared a moment of excitement after successfully running a complex code test for a new blockchain project on the Kaspa network. What started as an experiment in tracking portable user reputations is now growing into a full system for decentralized voting and decision-making. This matters because the project aims to build a tool where everyday users can securely act as trusted information sources, moving closer to a completely community-run governance suite.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/this-is-magic-sharing-a-moment-that-brings-me-great-joy/129</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Create a Kaspa Smiths Brand</title>
+            <link>https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78</link>
+            <description>Community members discussed rebranding &quot;KAS Smiths&quot; to &quot;Kaspa Smiths&quot; to make the name clearer and more closely tied to the official Kaspa project, while also introducing a fresh new logo featuring an anvil and a flame to represent building and forging tools for the network. While one user suggested a preference for the shorter &quot;KasSmith&quot; name and adding a paid posting feature, the overall focus of the discussion was on creating a strong, recognizable brand identity for developers across the ecosystem.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>KCC721 proposal: Kaspa NFTs with covenant rules</title>
+            <link>https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124</link>
+            <description>Developers have released an early draft for &quot;KCC721,&quot; a new way to handle NFTs on Kaspa that keeps them native to the network and allows users to send multiple NFTs in a single transaction. A community member also asked if this batch-transfer feature could be applied to Kaspa Name Service (KNS) domains. 
+
+This matters because it could make managing and trading multiple Kaspa digital collectibles much faster and cheaper, with a working test version already live for the community to try out and discuss.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Permissionless Covenant-Based Prediction Markets – High-Level Sketch</title>
+            <link>https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57</link>
+            <description>A community member proposed a new way to create open, community-run betting games—called prediction markets—where anyone can ask a question, set an end date, and let people trade &quot;yes&quot; or &quot;no&quot; tokens. To make sure winners always get paid, the system requires an equal number of both tokens to be created at the start, and relies on token holders to vote on the correct outcome once the event ends. While relying on voters isn&#x27;t foolproof, the group agreed that adding reward incentives could encourage people to vote honestly and make the system work smoothly.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Covenant tokens are the only Kaspa token type still missing metadata</title>
+            <link>https://kas-smiths.org/t/covenant-tokens-are-the-only-kaspa-token-type-still-missing-metadata/98</link>
+            <description>Kaspa community members discussed how &quot;covenant tokens&quot; are currently the only type of Kaspa token missing basic information like a name, logo, or decimals, making them look blank on tracking apps. To fix this, developers have proposed a new standard called KCC-0021 that lets creators attach names, images, and symbols to these tokens right from the start. This solution keeps the underlying technology clean while making it much easier for everyday users to actually recognize and view their tokens on apps and marketplaces.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/covenant-tokens-are-the-only-kaspa-token-type-still-missing-metadata/98</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Kaspa x402: pay-per-request KAS payments for APIs and AI agents</title>
+            <link>https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15</link>
+            <description>A developer shared a new tool that allows websites and AI bots to automatically make micro-payments using Kaspa for every individual data request. The community responded very positively, supporting the proposed naming system and offering to review the code before it is submitted to official standards organizations. This system could make it much easier and faster for automated services to pay for digital content on the fly.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer</title>
+            <link>https://kas-smiths.org/t/exploring-a-trust-minimized-krc-20-to-kcc-20-bridge-on-kaspa-without-relying-on-a-relayer/126</link>
+            <description>Crypto builders were discussing how to securely move tokens between different parts of the Kaspa network without having to trust a middleman. Someone suggested using smart contract &quot;covenants,&quot; but the main roadblock is that Kaspa&#x27;s base network cannot currently read the off-chain ledger records needed to verify token balances. 
+
+Ultimately, the discussion highlights that a fully trust-free bridge is currently blocked because the necessary proof systems (like ZK proofs or state checkpoints) aren&#x27;t yet available on Kaspa to verify token transactions on-chain.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/exploring-a-trust-minimized-krc-20-to-kcc-20-bridge-on-kaspa-without-relying-on-a-relayer/126</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Has there been any discussion of adding `getUtxosByCovenantId`?</title>
+            <link>https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74</link>
+            <description>Community members are discussing a new tool that would allow apps and digital wallets to easily track tokens and blockchain activity directly, without needing to build their own separate tracking systems. While some participants worry about how app developers will manage blockchain data, others point out that this helpful feature is already on the development roadmap and can be used safely. 
+
+**Why it matters:** 
+Adding this feature will make it much easier and faster for developers to build apps and tokens on the network, saving them from having to set up complicated, behind-the-scenes databases.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Public archive of Kas-Smiths</title>
+            <link>https://kas-smiths.org/t/public-archive-of-kas-smiths/109</link>
+            <description>The forum maintainer has created an automated public backup of all Kas-Smiths discussions on GitHub. This ensures the community&#x27;s history and knowledge are safely preserved for the future. This matters because it keeps the platform&#x27;s valuable technical history open, transparent, and safe from ever disappearing.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/public-archive-of-kas-smiths/109</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Sdk Development</title>
+            <link>https://kas-smiths.org/t/sdk-development/99</link>
+            <description>A developer successfully launched a test financial contract on the Kaspa network, but hit a roadblock because a necessary tool for interacting with it was missing from the official Python release, and building it from source caused technical errors. 
+
+Luckily, a project maintainer quickly stepped in to save the day, promising to release a temporary update later that day with the missing tools included, and asked the developer to report the installation bug on GitHub so it can be fixed permanently.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/sdk-development/99</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>KCC-02: Control Principal References in Program ABIs</title>
+            <link>https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95</link>
+            <description>The discussion focuses on how smart contracts should clearly define who &quot;owns&quot; or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Kaspa as an immutable seal</title>
+            <link>https://kas-smiths.org/t/kaspa-as-an-immutable-seal/31</link>
+            <description>Community members are discussing a clever way to prove a document existed at a specific time and hasn&#x27;t been tampered with, without actually uploading the private file to the blockchain. Instead, they use a unique digital fingerprint (or &quot;hash&quot;) of the document and record it on the Kaspa network using a simple transaction. 
+
+This matters because it offers a fast, incredibly cheap, and secure way to create permanent digital records and track official document updates over time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-as-an-immutable-seal/31</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Would a &quot;project audit &#x27;jury&#x27;&quot; be a good implementation for Kas-Smiths at this time?</title>
+            <link>https://kas-smiths.org/t/would-a-project-audit-jury-be-a-good-implementation-for-kas-smiths-at-this-time/83</link>
+            <description>A community member suggested creating a &quot;jury&quot; of experienced developers and volunteers to review ongoing projects, help fix design flaws, and share useful knowledge. Another participant liked the idea in theory, but worried that auditing would take up too much time and energy, especially since many creators rely on AI tools and might not fully understand the underlying technology themselves. 
+
+While the proposal highlights a strong need for better collaboration and catching missed opportunities, there is no final agreement yet on whether the benefits of a formal audit team would outweigh the heavy workload.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/would-a-project-audit-jury-be-a-good-implementation-for-kas-smiths-at-this-time/83</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>A path towards Universal Covenant</title>
+            <link>https://kas-smiths.org/t/a-path-towards-universal-covenant/41</link>
+            <description>Tech developers and wallet creators are discussing how to make different smart contracts work smoothly together without needing custom software for every single one. One participant suggested looking at how the Cardano network solves this using a menu of shared standards, while another proposed using AI as a friendly translator between everyday users and complex code. 
+
+Ultimately, this matters because it aims to make cryptocurrency apps much easier for regular people to use, removing the frustrating barrier where every new feature requires a brand new wallet update.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/a-path-towards-universal-covenant/41</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>A privacy-focused stablecoin</title>
+            <link>https://kas-smiths.org/t/a-privacy-focused-stablecoin/87</link>
+            <description>People on the forum were discussing the idea of creating a digital coin that stays stable in value like regular cash, but also keeps transactions private. Someone replied that a major company, Tether, is exploring new technology on the Bitcoin network that hides transaction details from public view. This matters because it shows how developers might soon be able to build a stable, private digital currency using existing blockchain security without exposing users&#x27; personal financial history.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/a-privacy-focused-stablecoin/87</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Hello all! I am Karrrl</title>
+            <link>https://kas-smiths.org/t/hello-all-i-am-karrrl/24</link>
+            <description>A user named Karrrl shared a new computer project called &quot;BitPhoque,&quot; which is a type of digital token built on the Kaspa network. Another community member chimed in with a lighthearted, friendly compliment about the project&#x27;s playful name. 
+
+This matters because it shows developers actively building and testing new features on Kaspa, helping the network grow and expand its capabilities for everyday users.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/hello-all-i-am-karrrl/24</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Using Covenants for User verifications</title>
+            <link>https://kas-smiths.org/t/using-covenants-for-user-verifications/86</link>
+            <description>A developer asked if they could use the Kaspa cryptocurrency network to check a user&#x27;s security clearance before letting them access special app content. Another community member replied that Kaspa is strictly designed for handling money, not for logging users in or managing security levels. 
+
+The consensus is that you cannot use Kaspa as an authentication tool, meaning the developer will need to use a traditional login system for user verifications instead.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/using-covenants-for-user-verifications/86</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Kaspa Calls for Conventions (new KCC repo)</title>
+            <link>https://kas-smiths.org/t/kaspa-calls-for-conventions-new-kcc-repo/84</link>
+            <description>The Kaspa community has launched a new online space called &quot;Kaspa Calls for Conventions&quot; (KCC) to help different developers and apps work better together. Think of it as a shared idea board where people can agree on common standards for things like digital wallets and tools, without changing the core foundation of Kaspa. This matters because it makes it much easier for different apps and wallets to speak the same language and seamlessly connect with one another.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-calls-for-conventions-new-kcc-repo/84</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>A privacy coin built on Kaspa</title>
+            <link>https://kas-smiths.org/t/a-privacy-coin-built-on-kaspa/81</link>
+            <description>People on the forum were discussing the idea of adding strong privacy features to Kaspa, a very fast and decentralized cryptocurrency network. Another user pointed out that Kaspa normally requires public keys, making transactions visible, but someone else mentioned a new project called Zkas as a potential solution. 
+
+This matters because combining Kaspa&#x27;s fast speed with hidden transaction details could give users the best of both worlds: rapid payments and financial privacy.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/a-privacy-coin-built-on-kaspa/81</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>How to Understand and Participate in the Kaspa Ecosystem</title>
+            <link>https://kas-smiths.org/t/how-to-understand-and-participate-in-the-kaspa-ecosystem/76</link>
+            <description>Community members are debating the best place to chat and build the Kaspa network, with some wanting to use Kaspa&#x27;s own custom platform while others prefer mainstream tools like Discourse. The goal is to figure out the easiest way to attract everyday users and developers from outside the community without making things too complicated. Ultimately, the discussion highlights a common crypto dilemma: balancing the use of niche, homegrown apps to show off the technology against using popular, familiar platforms to reach a much larger audience.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/how-to-understand-and-participate-in-the-kaspa-ecosystem/76</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)</title>
+            <link>https://kas-smiths.org/t/idea-a-bn254-pairing-check-opcode-unlock-kzg-plonk-universal-trusted-setup/64</link>
+            <description>Developers are celebrating the successful launch of private transactions on the Kaspa testnet, but they are frustrated that every new privacy feature currently requires a complex, time-consuming setup ceremony. To fix this, they are proposing a new, low-level technical tool (similar to what Ethereum uses) that would let developers easily build advanced privacy apps without starting from scratch every time. This upgrade matters because it would make building secure, private applications on Kaspa much faster, easier, and safer by borrowing an existing trusted security setup with over 140,000 contributors.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/idea-a-bn254-pairing-check-opcode-unlock-kzg-plonk-universal-trusted-setup/64</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Looking for honest feedback from the Kaspa community</title>
+            <link>https://kas-smiths.org/t/looking-for-honest-feedback-from-the-kaspa-community/47</link>
+            <description>A non-technical Kaspa fan used an AI tool to build two experimental websites—one demonstrating advanced blockchain features and another acting as an educational resource hub—and bravely asked the online community to review them. Community members need to look at these sites to determine if they actually provide helpful, accurate information or if they are just confusing, AI-generated nonsense that needs to be fixed.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/looking-for-honest-feedback-from-the-kaspa-community/47</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>A Covenant-Native Framework for Agentic Commerce on Kaspa</title>
+            <link>https://kas-smiths.org/t/a-covenant-native-framework-for-agentic-commerce-on-kaspa/13</link>
+            <description>A community member introduced &quot;Axiom,&quot; a new conceptual framework that helps autonomous software agents securely handle money, pay for services, and manage escrows directly on the Kaspa blockchain. Another member suggested using a specific cryptographic tool called `OpCheckSigFromStack` to help agents easily and safely authorize their spending intentions. The creator of Axiom welcomed the idea, noting it could serve as a great lightweight security check before the agent locks funds into a smart contract.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/a-covenant-native-framework-for-agentic-commerce-on-kaspa/13</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>Hello kaspa world</title>
+            <link>https://kas-smiths.org/t/hello-kaspa-world/10</link>
+            <description>A new community member joined the forum and asked how to use Kaspa—a digital currency and blockchain technology—to build a supply chain for pharmaceutical research and development. Another user offered to brainstorm ideas, while a third person shared a detailed list of how Kaspa could improve the drug industry, such as making safety records instant and tracking medications from creation to delivery. 
+
+This discussion matters because it shows how everyday cryptocurrency technology could soon be used to solve major real-world problems in medicine, making drug manufacturing safer, easier to inspect, and completely transparent.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/hello-kaspa-world/10</guid>
+            <pubDate></pubDate>
+        </item>
+        <item>
+            <title>User-friendly privacy features and censorship-resistant stablecoins like DAI</title>
+            <link>https://kas-smiths.org/t/user-friendly-privacy-features-and-censorship-resistant-stablecoins-like-dai/16</link>
+            <description>A community member suggested that the Kaspa network needs built-in privacy features—like hidden transaction details—and its own independent digital dollar (similar to DAI) so users don&#x27;t have to rely on outside companies. They pointed out that everyday users and businesses alike don&#x27;t want their financial activity tracked on a fully public ledger. A moderator then moved the conversation to the &quot;Applications&quot; topic to keep the forum organized. 
+
+This discussion matters because adding privacy and independent stablecoins is seen as a crucial step for Kaspa to support advanced financial tools, protect user data, and compete with other major blockchain networks.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/user-friendly-privacy-features-and-censorship-resistant-stablecoins-like-dai/16</guid>
+            <pubDate></pubDate>
+        </item>
+</channel>
+</rss>
