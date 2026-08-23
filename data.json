@@ -1,0 +1,284 @@
+{
+  "topics": [
+    {
+      "id": 5,
+      "title": "Welcome to Kas Smiths! :wave:",
+      "url": "https://kas-smiths.org/t/welcome-to-kas-smiths/5",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 150,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 108,
+      "title": "REST API drops compute_budget for v1 transactions on testnet-10",
+      "url": "https://kas-smiths.org/t/rest-api-drops-compute-budget-for-v1-transactions-on-testnet-10/108",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 4,
+      "views": 55,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 8,
+      "title": "Fungible Token Covenant Specification (KCC20)",
+      "url": "https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 45,
+      "views": 563,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 129,
+      "title": "This is magic... sharing a moment that brings me great joy",
+      "url": "https://kas-smiths.org/t/this-is-magic-sharing-a-moment-that-brings-me-great-joy/129",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 38,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 78,
+      "title": "Create a Kaspa Smiths Brand",
+      "url": "https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 19,
+      "views": 133,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 124,
+      "title": "KCC721 proposal: Kaspa NFTs with covenant rules",
+      "url": "https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 43,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 57,
+      "title": "Permissionless Covenant-Based Prediction Markets – High-Level Sketch",
+      "url": "https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 8,
+      "views": 101,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 98,
+      "title": "Covenant tokens are the only Kaspa token type still missing metadata",
+      "url": "https://kas-smiths.org/t/covenant-tokens-are-the-only-kaspa-token-type-still-missing-metadata/98",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 8,
+      "views": 110,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 15,
+      "title": "Kaspa x402: pay-per-request KAS payments for APIs and AI agents",
+      "url": "https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 29,
+      "views": 418,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 126,
+      "title": "Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer",
+      "url": "https://kas-smiths.org/t/exploring-a-trust-minimized-krc-20-to-kcc-20-bridge-on-kaspa-without-relying-on-a-relayer/126",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 39,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 74,
+      "title": "Has there been any discussion of adding `getUtxosByCovenantId`?",
+      "url": "https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 7,
+      "views": 123,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 109,
+      "title": "Public archive of Kas-Smiths",
+      "url": "https://kas-smiths.org/t/public-archive-of-kas-smiths/109",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 1,
+      "views": 32,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 99,
+      "title": "Sdk Development",
+      "url": "https://kas-smiths.org/t/sdk-development/99",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 5,
+      "views": 51,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 95,
+      "title": "KCC-02: Control Principal References in Program ABIs",
+      "url": "https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 56,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 31,
+      "title": "Kaspa as an immutable seal",
+      "url": "https://kas-smiths.org/t/kaspa-as-an-immutable-seal/31",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 74,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 83,
+      "title": "Would a \"project audit 'jury'\" be a good implementation for Kas-Smiths at this time?",
+      "url": "https://kas-smiths.org/t/would-a-project-audit-jury-be-a-good-implementation-for-kas-smiths-at-this-time/83",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 52,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 41,
+      "title": "A path towards Universal Covenant",
+      "url": "https://kas-smiths.org/t/a-path-towards-universal-covenant/41",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 13,
+      "views": 210,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 87,
+      "title": "A privacy-focused stablecoin",
+      "url": "https://kas-smiths.org/t/a-privacy-focused-stablecoin/87",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 49,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 08:59 UTC"
+    },
+    {
+      "id": 24,
+      "title": "Hello all! I am Karrrl",
+      "url": "https://kas-smiths.org/t/hello-all-i-am-karrrl/24",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 63,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 86,
+      "title": "Using Covenants for User verifications",
+      "url": "https://kas-smiths.org/t/using-covenants-for-user-verifications/86",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 35,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 84,
+      "title": "Kaspa Calls for Conventions (new KCC repo)",
+      "url": "https://kas-smiths.org/t/kaspa-calls-for-conventions-new-kcc-repo/84",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 1,
+      "views": 97,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 81,
+      "title": "A privacy coin built on Kaspa",
+      "url": "https://kas-smiths.org/t/a-privacy-coin-built-on-kaspa/81",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 79,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 76,
+      "title": "How to Understand and Participate in the Kaspa Ecosystem",
+      "url": "https://kas-smiths.org/t/how-to-understand-and-participate-in-the-kaspa-ecosystem/76",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 41,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 64,
+      "title": "Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)",
+      "url": "https://kas-smiths.org/t/idea-a-bn254-pairing-check-opcode-unlock-kzg-plonk-universal-trusted-setup/64",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 42,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 47,
+      "title": "Looking for honest feedback from the Kaspa community",
+      "url": "https://kas-smiths.org/t/looking-for-honest-feedback-from-the-kaspa-community/47",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 1,
+      "views": 43,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 13,
+      "title": "A Covenant-Native Framework for Agentic Commerce on Kaspa",
+      "url": "https://kas-smiths.org/t/a-covenant-native-framework-for-agentic-commerce-on-kaspa/13",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 6,
+      "views": 130,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 10,
+      "title": "Hello kaspa world",
+      "url": "https://kas-smiths.org/t/hello-kaspa-world/10",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 3,
+      "views": 89,
+      "is_hot": true,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    },
+    {
+      "id": 16,
+      "title": "User-friendly privacy features and censorship-resistant stablecoins like DAI",
+      "url": "https://kas-smiths.org/t/user-friendly-privacy-features-and-censorship-resistant-stablecoins-like-dai/16",
+      "summary": "Summary unavailable at this time.",
+      "posts_count": 2,
+      "views": 64,
+      "is_hot": false,
+      "updated_at": "Aug 23, 2026 09:00 UTC"
+    }
+  ]
+}
