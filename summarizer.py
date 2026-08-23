@@ -51,11 +51,7 @@ Instructions:
 3. Do not start with conversational filler."""
 
     # Models to attempt in order of preference
-    candidate_models = [
-        "gemini-2.0-flash",
-        "gemini-1.5-flash",
-        "gemini-2.5-flash-lite"
-    ]
+    candidate_models = ["gemini-3.5-flash-lite", "gemini-3.6-flash"]
 
     for model_name in candidate_models:
         for attempt in range(2):
