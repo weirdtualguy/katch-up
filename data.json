@@ -8,7 +8,11 @@
       "posts_count": 2,
       "views": 151,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Community",
+      "what_happened": "A new community workshop called \"Kas Smiths\" has been launched for people to collaborate on tools, wallets, and apps built on the Kaspa network. A community member responded enthusiastically, noting it will be especially helpful for connecting smaller, independent developers.",
+      "why_it_matters": "This matters because it provides a dedicated, practical space where people can pitch ideas, test them out, and build the future of Kaspa together.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 8,
@@ -18,7 +22,11 @@
       "posts_count": 46,
       "views": 566,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Tokens",
+      "what_happened": "Kaspa developers are discussing a new rulebook called \"KCC20\" to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing.",
+      "why_it_matters": "This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 108,
@@ -28,7 +36,10 @@
       "posts_count": 4,
       "views": 55,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Infrastructure",
+      "what_happened": "A developer building a token project on the testnet ran into an error where the system ignored their custom transaction budgets, causing their submissions to fail. Other users pointed out that bypassing the public web interface and connecting directly to the node solves the problem, and noted that a code fix is already in the works to permanently resolve these glitches.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 129,
@@ -38,7 +49,10 @@
       "posts_count": 3,
       "views": 38,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Governance",
+      "what_happened": "A developer shared a moment of excitement after successfully running a complex code test for a new blockchain project on the Kaspa network. What started as an experiment in tracking portable user reputations is now growing into a full system for decentralized voting and decision-making. This matters because the project aims to build a tool where everyday users can securely act as trusted information sources, moving closer to a completely community-run governance suite.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 78,
@@ -48,7 +62,10 @@
       "posts_count": 19,
       "views": 133,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Community",
+      "what_happened": "Community members discussed rebranding \"KAS Smiths\" to \"Kaspa Smiths\" to make the name clearer and more closely tied to the official Kaspa project, while also introducing a fresh new logo featuring an anvil and a flame to represent building and forging tools for the network. While one user suggested a preference for the shorter \"KasSmith\" name and adding a paid posting feature, the overall focus of the discussion was on creating a strong, recognizable brand identity for developers across the ecosystem.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 124,
@@ -58,7 +75,11 @@
       "posts_count": 2,
       "views": 43,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "NFTs",
+      "what_happened": "Developers have released an early draft for \"KCC721,\" a new way to handle NFTs on Kaspa that keeps them native to the network and allows users to send multiple NFTs in a single transaction. A community member also asked if this batch-transfer feature could be applied to Kaspa Name Service (KNS) domains.",
+      "why_it_matters": "This matters because it could make managing and trading multiple Kaspa digital collectibles much faster and cheaper, with a working test version already live for the community to try out and discuss.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 57,
@@ -68,7 +89,10 @@
       "posts_count": 8,
       "views": 101,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "DeFi",
+      "what_happened": "A community member proposed a new way to create open, community-run betting games—called prediction markets—where anyone can ask a question, set an end date, and let people trade \"yes\" or \"no\" tokens. To make sure winners always get paid, the system requires an equal number of both tokens to be created at the start, and relies on token holders to vote on the correct outcome once the event ends. While relying on voters isn't foolproof, the group agreed that adding reward incentives could encourage people to vote honestly and make the system work smoothly.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 98,
@@ -78,7 +102,10 @@
       "posts_count": 8,
       "views": 110,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Tokens",
+      "what_happened": "Kaspa community members discussed how \"covenant tokens\" are currently the only type of Kaspa token missing basic information like a name, logo, or decimals, making them look blank on tracking apps. To fix this, developers have proposed a new standard called KCC-0021 that lets creators attach names, images, and symbols to these tokens right from the start. This solution keeps the underlying technology clean while making it much easier for everyday users to actually recognize and view their tokens on apps and marketplaces.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 15,
@@ -88,7 +115,10 @@
       "posts_count": 29,
       "views": 419,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "AI",
+      "what_happened": "A developer shared a new tool that allows websites and AI bots to automatically make micro-payments using Kaspa for every individual data request. The community responded very positively, supporting the proposed naming system and offering to review the code before it is submitted to official standards organizations. This system could make it much easier and faster for automated services to pay for digital content on the fly.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 126,
@@ -98,7 +128,11 @@
       "posts_count": 2,
       "views": 39,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "DeFi",
+      "what_happened": "Crypto builders were discussing how to securely move tokens between different parts of the Kaspa network without having to trust a middleman. Someone suggested using smart contract \"covenants,\" but the main roadblock is that Kaspa's base network cannot currently read the off-chain ledger records needed to verify token balances.",
+      "why_it_matters": "Ultimately, the discussion highlights that a fully trust-free bridge is currently blocked because the necessary proof systems (like ZK proofs or state checkpoints) aren't yet available on Kaspa to verify token transactions on-chain.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 74,
@@ -108,7 +142,11 @@
       "posts_count": 7,
       "views": 124,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:12 UTC"
+      "updated_at": "Aug 23, 2026 11:12 UTC",
+      "category": "Development",
+      "what_happened": "Community members are discussing a new tool that would allow apps and digital wallets to easily track tokens and blockchain activity directly, without needing to build their own separate tracking systems. While some participants worry about how app developers will manage blockchain data, others point out that this helpful feature is already on the development roadmap and can be used safely.",
+      "why_it_matters": "Adding this feature will make it much easier and faster for developers to build apps and tokens on the network, saving them from having to set up complicated, behind-the-scenes databases.",
+      "iso_date": "2026-08-23T11:12:00+00:00"
     },
     {
       "id": 109,
@@ -118,7 +156,10 @@
       "posts_count": 1,
       "views": 32,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Ecosystem",
+      "what_happened": "The forum maintainer has created an automated public backup of all Kas-Smiths discussions on GitHub. This ensures the community's history and knowledge are safely preserved for the future. This matters because it keeps the platform's valuable technical history open, transparent, and safe from ever disappearing.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 99,
@@ -128,7 +169,11 @@
       "posts_count": 5,
       "views": 51,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Development",
+      "what_happened": "A developer successfully launched a test financial contract on the Kaspa network, but hit a roadblock because a necessary tool for interacting with it was missing from the official Python release, and building it from source caused technical errors.",
+      "why_it_matters": "Luckily, a project maintainer quickly stepped in to save the day, promising to release a temporary update later that day with the missing tools included, and asked the developer to report the installation bug on GitHub so it can be fixed permanently.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 95,
@@ -138,7 +183,10 @@
       "posts_count": 3,
       "views": 56,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Governance",
+      "what_happened": "The discussion focuses on how smart contracts should clearly define who \"owns\" or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 31,
@@ -148,7 +196,11 @@
       "posts_count": 3,
       "views": 74,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Ecosystem",
+      "what_happened": "Community members are discussing a clever way to prove a document existed at a specific time and hasn't been tampered with, without actually uploading the private file to the blockchain. Instead, they use a unique digital fingerprint (or \"hash\") of the document and record it on the Kaspa network using a simple transaction.",
+      "why_it_matters": "This matters because it offers a fast, incredibly cheap, and secure way to create permanent digital records and track official document updates over time.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 83,
@@ -158,7 +210,11 @@
       "posts_count": 2,
       "views": 52,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Governance",
+      "what_happened": "A community member suggested creating a \"jury\" of experienced developers and volunteers to review ongoing projects, help fix design flaws, and share useful knowledge. Another participant liked the idea in theory, but worried that auditing would take up too much time and energy, especially since many creators rely on AI tools and might not fully understand the underlying technology themselves.",
+      "why_it_matters": "While the proposal highlights a strong need for better collaboration and catching missed opportunities, there is no final agreement yet on whether the benefits of a formal audit team would outweigh the heavy workload.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 41,
@@ -168,7 +224,11 @@
       "posts_count": 13,
       "views": 210,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Development",
+      "what_happened": "Tech developers and wallet creators are discussing how to make different smart contracts work smoothly together without needing custom software for every single one. One participant suggested looking at how the Cardano network solves this using a menu of shared standards, while another proposed using AI as a friendly translator between everyday users and complex code.",
+      "why_it_matters": "Ultimately, this matters because it aims to make cryptocurrency apps much easier for regular people to use, removing the frustrating barrier where every new feature requires a brand new wallet update.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 87,
@@ -178,7 +238,10 @@
       "posts_count": 2,
       "views": 49,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Privacy",
+      "what_happened": "People on the forum were discussing the idea of creating a digital coin that stays stable in value like regular cash, but also keeps transactions private. Someone replied that a major company, Tether, is exploring new technology on the Bitcoin network that hides transaction details from public view. This matters because it shows how developers might soon be able to build a stable, private digital currency using existing blockchain security without exposing users' personal financial history.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 24,
@@ -188,7 +251,11 @@
       "posts_count": 2,
       "views": 63,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Community",
+      "what_happened": "A user named Karrrl shared a new computer project called \"BitPhoque,\" which is a type of digital token built on the Kaspa network. Another community member chimed in with a lighthearted, friendly compliment about the project's playful name.",
+      "why_it_matters": "This matters because it shows developers actively building and testing new features on Kaspa, helping the network grow and expand its capabilities for everyday users.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 86,
@@ -198,7 +265,11 @@
       "posts_count": 2,
       "views": 35,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Development",
+      "what_happened": "A developer asked if they could use the Kaspa cryptocurrency network to check a user's security clearance before letting them access special app content. Another community member replied that Kaspa is strictly designed for handling money, not for logging users in or managing security levels.",
+      "why_it_matters": "The consensus is that you cannot use Kaspa as an authentication tool, meaning the developer will need to use a traditional login system for user verifications instead.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 84,
@@ -208,7 +279,10 @@
       "posts_count": 1,
       "views": 97,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Development",
+      "what_happened": "The Kaspa community has launched a new online space called \"Kaspa Calls for Conventions\" (KCC) to help different developers and apps work better together. Think of it as a shared idea board where people can agree on common standards for things like digital wallets and tools, without changing the core foundation of Kaspa. This matters because it makes it much easier for different apps and wallets to speak the same language and seamlessly connect with one another.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 81,
@@ -218,7 +292,11 @@
       "posts_count": 3,
       "views": 79,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Privacy",
+      "what_happened": "People on the forum were discussing the idea of adding strong privacy features to Kaspa, a very fast and decentralized cryptocurrency network. Another user pointed out that Kaspa normally requires public keys, making transactions visible, but someone else mentioned a new project called Zkas as a potential solution.",
+      "why_it_matters": "This matters because combining Kaspa's fast speed with hidden transaction details could give users the best of both worlds: rapid payments and financial privacy.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 76,
@@ -228,7 +306,10 @@
       "posts_count": 3,
       "views": 41,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Ecosystem",
+      "what_happened": "Community members are debating the best place to chat and build the Kaspa network, with some wanting to use Kaspa's own custom platform while others prefer mainstream tools like Discourse. The goal is to figure out the easiest way to attract everyday users and developers from outside the community without making things too complicated. Ultimately, the discussion highlights a common crypto dilemma: balancing the use of niche, homegrown apps to show off the technology against using popular, familiar platforms to reach a much larger audience.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 64,
@@ -238,7 +319,10 @@
       "posts_count": 2,
       "views": 42,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Development",
+      "what_happened": "Developers are celebrating the successful launch of private transactions on the Kaspa testnet, but they are frustrated that every new privacy feature currently requires a complex, time-consuming setup ceremony. To fix this, they are proposing a new, low-level technical tool (similar to what Ethereum uses) that would let developers easily build advanced privacy apps without starting from scratch every time. This upgrade matters because it would make building secure, private applications on Kaspa much faster, easier, and safer by borrowing an existing trusted security setup with over 140,000 contributors.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 47,
@@ -248,7 +332,10 @@
       "posts_count": 1,
       "views": 43,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "AI",
+      "what_happened": "A non-technical Kaspa fan used an AI tool to build two experimental websites—one demonstrating advanced blockchain features and another acting as an educational resource hub—and bravely asked the online community to review them. Community members need to look at these sites to determine if they actually provide helpful, accurate information or if they are just confusing, AI-generated nonsense that needs to be fixed.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 13,
@@ -258,7 +345,10 @@
       "posts_count": 6,
       "views": 130,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "AI",
+      "what_happened": "A community member introduced \"Axiom,\" a new conceptual framework that helps autonomous software agents securely handle money, pay for services, and manage escrows directly on the Kaspa blockchain. Another member suggested using a specific cryptographic tool called `OpCheckSigFromStack` to help agents easily and safely authorize their spending intentions. The creator of Axiom welcomed the idea, noting it could serve as a great lightweight security check before the agent locks funds into a smart contract.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 10,
@@ -268,7 +358,11 @@
       "posts_count": 3,
       "views": 89,
       "is_hot": true,
-      "updated_at": "Aug 23, 2026 11:13 UTC"
+      "updated_at": "Aug 23, 2026 11:13 UTC",
+      "category": "Community",
+      "what_happened": "A new community member joined the forum and asked how to use Kaspa—a digital currency and blockchain technology—to build a supply chain for pharmaceutical research and development. Another user offered to brainstorm ideas, while a third person shared a detailed list of how Kaspa could improve the drug industry, such as making safety records instant and tracking medications from creation to delivery.",
+      "why_it_matters": "This discussion matters because it shows how everyday cryptocurrency technology could soon be used to solve major real-world problems in medicine, making drug manufacturing safer, easier to inspect, and completely transparent.",
+      "iso_date": "2026-08-23T11:13:00+00:00"
     },
     {
       "id": 16,
@@ -278,7 +372,11 @@
       "posts_count": 2,
       "views": 64,
       "is_hot": false,
-      "updated_at": "Aug 23, 2026 11:14 UTC"
+      "updated_at": "Aug 23, 2026 11:14 UTC",
+      "category": "Privacy",
+      "what_happened": "A community member suggested that the Kaspa network needs built-in privacy features—like hidden transaction details—and its own independent digital dollar (similar to DAI) so users don't have to rely on outside companies. They pointed out that everyday users and businesses alike don't want their financial activity tracked on a fully public ledger. A moderator then moved the conversation to the \"Applications\" topic to keep the forum organized.",
+      "why_it_matters": "This discussion matters because adding privacy and independent stablecoins is seen as a crucial step for Kaspa to support advanced financial tools, protect user data, and compete with other major blockchain networks.",
+      "iso_date": "2026-08-23T11:14:00+00:00"
     }
   ]
 }

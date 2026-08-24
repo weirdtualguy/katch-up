@@ -3,496 +3,709 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A daily digest of hot discussions from the Kas-Smiths forum.">
-    <meta property="og:title" content="Kas-Smiths Forum Digest">
-    <meta property="og:description" content="What happened while you were away, explained in simple terms.">
+    <meta name="description" content="Katch-Up is the fastest way to understand what's happening in Kaspa: top stories, why they matter, and where to read more.">
+    <meta property="og:title" content="Katch-Up">
+    <meta property="og:description" content="The fastest way to understand what's happening in Kaspa.">
     <meta property="og:type" content="website">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link rel="alternate" type="application/rss+xml" title="Kas-Smiths Digest RSS" href="feed.xml">
-    <title>Kas-Smiths Daily Digest</title>
+    <title>Katch-Up — Kaspa, caught up.</title>
     <style>
         :root {
-            --bg: #0f172a; --surface: #1e293b; --text-main: #f8fafc; --text-muted: #cbd5e1;
-            --primary: #38bdf8; --accent: #f97316; --border: #334155;
+            --bg: #0f172a; --surface: #1e293b; --surface-raised: #24324a;
+            --text-main: #f8fafc; --text-muted: #cbd5e1; --text-dim: #94a3b8;
+            --primary: #38bdf8; --primary-dim: rgba(56, 189, 248, 0.14);
+            --accent: #f97316; --accent-dim: rgba(249, 115, 22, 0.16);
+            --border: #334155; --border-soft: rgba(148, 163, 184, 0.16);
+            --radius-lg: 16px; --radius-md: 12px; --radius-sm: 8px;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text-main); margin: 0; padding: 16px; display: flex; justify-content: center; }
-        .container { max-width: 680px; width: 100%; }
-        header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; }
-        h1 { margin: 0 0 6px 0; font-size: 1.5rem; }
-        .tagline { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
-        .rss-link { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
-        .rss-link:hover { color: var(--accent); }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2); }
-        .card-link { display: block; padding: 16px; color: inherit; text-decoration: none; border-radius: 12px; }
-        .card-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.75rem; }
-        .badge { background: rgba(249, 115, 22, 0.2); color: var(--accent); padding: 2px 8px; border-radius: 99px; font-weight: bold; }
-        .date { color: var(--text-muted); margin-left: auto; font-weight: 500; }
-        h2 { margin: 0 0 10px 0; font-size: 1.15rem; line-height: 1.35; color: var(--primary); }
-        .card-link:hover h2 { text-decoration: underline; }
-        .summary { margin: 0 0 12px 0; color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; }
-        .card-footer { display: flex; align-items: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; }
-    </style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg); color: var(--text-main); margin: 0; line-height: 1.5;
+            overflow-x: hidden;
+        }
+        a { color: inherit; }
+        button { font: inherit; color: inherit; }
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; left: -9999px; top: 8px; background: var(--primary); color: #04202f;
+            padding: 10px 16px; border-radius: var(--radius-sm); z-index: 100; font-weight: 700;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 8px; }
+        :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+        .site-header { padding: 18px 16px 14px; border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 720px; margin: 0 auto; }
+        .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .brand-block { min-width: 0; }
+        .logo { display: flex; align-items: center; gap: 6px; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
+        .tagline { margin: 2px 0 0; color: var(--text-muted); font-size: 0.9rem; }
+        .header-actions { display: flex; align-items: center; gap: 8px; flex: 1 1 auto; min-width: 180px; justify-content: flex-end; }
+        .search-wrap { position: relative; flex: 1 1 auto; max-width: 220px; }
+        .search-input {
+            width: 100%; background: var(--surface); border: 1px solid var(--border); color: var(--text-main);
+            border-radius: 999px; padding: 9px 14px 9px 30px; font-size: 0.87rem; min-height: 40px;
+        }
+        .search-input::placeholder { color: var(--text-dim); }
+        .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 0.82rem; pointer-events: none; }
+        .rss-link {
+            color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 700;
+            border: 1px solid var(--border); border-radius: 999px; padding: 0 14px; min-height: 40px;
+            display: inline-flex; align-items: center; white-space: nowrap; flex-shrink: 0;
+        }
+        .rss-link:hover, .rss-link:focus-visible { color: var(--primary); border-color: var(--primary); }
+        .source-line { margin: 10px 0 0; color: var(--text-dim); font-size: 0.76rem; }
+        .source-line a { color: var(--text-dim); }
+
+        .catchup-bar {
+            margin: 20px 0 28px; padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(56,189,248,0.09), rgba(249,115,22,0.05));
+            border: 1px solid var(--border-soft); border-radius: var(--radius-lg);
+        }
+        .catchup-date { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
+        .catchup-headline { margin: 0 0 4px; font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+        .catchup-headline strong { color: var(--primary); }
+        .catchup-time { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
+
+        .section-heading { font-size: 1.05rem; font-weight: 700; margin: 0; }
+        .section-heading-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+        .result-count { color: var(--text-dim); font-size: 0.82rem; }
+        .top-stories { margin-bottom: 30px; }
+        .top-stories .section-heading { margin-bottom: 14px; }
+
+        .top-stories-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        @media (min-width: 720px) { .top-stories-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); } }
+
+        .top-story-card {
+            background: var(--surface-raised); border: 1px solid var(--border); border-left: 3px solid var(--primary);
+            border-radius: var(--radius-lg); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.25);
+        }
+        .top-story-link { display: block; padding: 18px; text-decoration: none; color: inherit; border-radius: var(--radius-lg); }
+        .top-story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .story-rank {
+            display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+            border-radius: 50%; background: var(--primary-dim); color: var(--primary); font-size: 0.72rem; font-weight: 800; flex-shrink: 0;
+        }
+        .pill { font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+        .pill-category { background: rgba(148,163,184,0.16); color: var(--text-muted); }
+        .pill-trend { background: var(--accent-dim); color: var(--accent); }
+        .top-story-title { margin: 0 0 8px; font-size: 1.12rem; line-height: 1.35; font-weight: 700; overflow-wrap: break-word; }
+        .top-story-link:hover .top-story-title, .top-story-link:focus-visible .top-story-title { color: var(--primary); }
+        .story-what { margin: 0 0 10px; color: #e2e8f0; font-size: 0.93rem; line-height: 1.55; }
+        .story-why { background: rgba(56,189,248,0.07); border-left: 2px solid var(--primary); padding: 8px 12px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 10px; }
+        .story-next { padding: 8px 12px; margin-bottom: 10px; border-left: 2px solid var(--border); }
+        .story-why-label, .story-next-label { display: block; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 2px; }
+        .story-next-label { color: var(--text-dim); }
+        .story-why p, .story-next p { margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+        .story-footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--text-dim); font-size: 0.78rem; padding-top: 10px; border-top: 1px solid var(--border-soft); margin-top: 4px; }
+        .read-link { display: inline-block; margin-top: 10px; color: var(--primary); font-size: 0.85rem; font-weight: 700; }
+
+        .filter-section { margin-bottom: 22px; }
+        .category-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 8px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+        @media (prefers-reduced-motion: no-preference) { .category-scroll { scroll-behavior: smooth; } }
+        .chip {
+            flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; background: var(--surface);
+            border: 1px solid var(--border); color: var(--text-muted); padding: 0 14px; min-height: 40px;
+            border-radius: 999px; font-size: 0.84rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .chip:hover { border-color: var(--primary); color: var(--text-main); }
+        .chip.active { background: var(--primary); border-color: var(--primary); color: #04202f; }
+        .chip-count { font-size: 0.74rem; opacity: 0.8; font-weight: 700; }
+
+        .discussion-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        @media (min-width: 640px) { .discussion-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: 0 2px 4px -1px rgba(0,0,0,0.15); }
+        .card-link { display: block; padding: 16px; color: inherit; text-decoration: none; border-radius: var(--radius-md); }
+        .card-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+        .pill-category-inline { background: rgba(148,163,184,0.13); color: var(--text-dim); }
+        .pill-trend-inline { background: var(--accent-dim); color: var(--accent); }
+        .pill-active-inline { background: var(--primary-dim); color: var(--primary); }
+        .card-title { margin: 0 0 8px; font-size: 1.01rem; line-height: 1.35; font-weight: 700; overflow-wrap: break-word; }
+        .card-link:hover .card-title, .card-link:focus-visible .card-title { color: var(--primary); }
+        .summary { margin: 0 0 10px; color: #cbd5e1; font-size: 0.87rem; line-height: 1.5; }
+        .card-why { margin: 0 0 10px; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; padding-left: 10px; border-left: 2px solid var(--border); }
+        .card-why-label { font-weight: 700; color: var(--text-dim); text-transform: uppercase; font-size: 0.66rem; letter-spacing: 0.05em; margin-right: 4px; }
+        .card-footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--text-dim); font-size: 0.76rem; border-top: 1px solid var(--border-soft); padding-top: 8px; }
+
+        .empty-filter-state { text-align: center; padding: 36px 16px; color: var(--text-muted); }
+        .link-button { background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; padding: 8px 12px; text-decoration: underline; font-size: 0.9rem; min-height: 40px; }
+        .no-data-state { padding: 36px 16px; text-align: center; color: var(--text-muted); }
+
+        .site-footer { max-width: 720px; margin: 8px auto 0; padding: 20px 16px 32px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.8rem; text-align: center; }
+        .site-footer a { color: var(--text-muted); }
+
+        @media (max-width: 380px) {
+            .container { padding: 0 12px 40px; }
+            .site-header { padding: 16px 12px 12px; }
+            .catchup-headline { font-size: 1.1rem; }
+            .header-actions { justify-content: flex-start; width: 100%; }
+            .search-wrap { max-width: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+            }
+        }
+</style>
 </head>
 <body>
-    <main class="container">
-        <header>
-            <div>
-                <h1>⚡ Kas-Smiths Forum Digest</h1>
-                <p class="tagline">What happened while you were away, explained in simple terms.</p>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-row">
+                <div class="brand-block">
+                    <span class="logo">⚡ Katch-Up</span>
+                    <p class="tagline">Kaspa, caught up.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-wrap">
+                        <label for="searchInput" class="visually-hidden">Search discussions</label>
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                        <input type="search" id="searchInput" class="search-input" placeholder="Search discussions">
+                    </div>
+                    <a href="feed.xml" class="rss-link" aria-label="RSS feed">RSS</a>
+                </div>
             </div>
-            <a href="feed.xml" class="rss-link" aria-label="RSS Feed">📶 RSS</a>
-        </header>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/welcome-to-kas-smiths/5" target="_blank" rel="noopener noreferrer" aria-label="Welcome to Kas Smiths! :wave:">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Welcome to Kas Smiths! :wave:</h2>
-                <p class="summary">A new community workshop called &quot;Kas Smiths&quot; has been launched for people to collaborate on tools, wallets, and apps built on the Kaspa network. A community member responded enthusiastically, noting it will be especially helpful for connecting smaller, independent developers. 
+            <p class="source-line">Powered by <a href="https://kas-smiths.org">Kas-Smiths</a></p>
+        </div>
+    </header>
+    <main id="main" class="container">
 
-This matters because it provides a dedicated, practical space where people can pitch ideas, test them out, and build the future of Kaspa together.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 151 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8" target="_blank" rel="noopener noreferrer" aria-label="Fungible Token Covenant Specification (KCC20)">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Fungible Token Covenant Specification (KCC20)</h2>
-                <p class="summary">Kaspa developers are discussing a new rulebook called &quot;KCC20&quot; to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing. 
+        <section class="catchup-bar" aria-label="Digest summary">
+            <time class="catchup-date" datetime="2026-08-24">Today &middot; Aug 24</time>
+            <p class="catchup-headline"><strong>28</strong> discussions open right now.</p>
+            <p class="catchup-time">Catch up on the top stories in ~3 min.</p>
+        </section>
 
-This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 46 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 566 views
+        <section class="top-stories" aria-labelledby="topStoriesHeading">
+            <h2 id="topStoriesHeading" class="section-heading">🔥 Top Stories</h2>
+            <div class="top-stories-grid">
+                <article class="top-story-card">
+                    <a class="top-story-link" href="https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8" target="_blank" rel="noopener noreferrer" aria-label="Fungible Token Covenant Specification (KCC20) — Tokens, top story, opens original discussion">
+                        <div class="top-story-meta">
+                            <span class="story-rank" aria-hidden="true">1</span>
+                            <span class="pill pill-category">Tokens</span>
+                            <span class="pill pill-trend">🔥 Trending</span>
+                        </div>
+                        <h3 class="top-story-title">Fungible Token Covenant Specification (KCC20)</h3>
+                        <p class="story-what">Kaspa developers are discussing a new rulebook called &quot;KCC20&quot; to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing.</p>
+                <div class="story-why">
+                    <span class="story-why-label">Why it matters</span>
+                    <p>This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.</p>
                 </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/rest-api-drops-compute-budget-for-v1-transactions-on-testnet-10/108" target="_blank" rel="noopener noreferrer" aria-label="REST API drops compute_budget for v1 transactions on testnet-10">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
+                        <div class="story-footer">
+                            <span class="story-meta-item">💬 46 replies</span> <span class="story-meta-item">📖 1 min read</span> <time class="story-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                        <span class="read-link" aria-hidden="true">Read discussion →</span>
+                    </a>
+                </article>
+                <article class="top-story-card">
+                    <a class="top-story-link" href="https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15" target="_blank" rel="noopener noreferrer" aria-label="Kaspa x402: pay-per-request KAS payments for APIs and AI agents — AI, top story, opens original discussion">
+                        <div class="top-story-meta">
+                            <span class="story-rank" aria-hidden="true">2</span>
+                            <span class="pill pill-category">AI</span>
+                            <span class="pill pill-trend">🔥 Trending</span>
+                        </div>
+                        <h3 class="top-story-title">Kaspa x402: pay-per-request KAS payments for APIs and AI agents</h3>
+                        <p class="story-what">A developer shared a new tool that allows websites and AI bots to automatically make micro-payments using Kaspa for every individual data request. The community responded very positively, supporting the proposed naming system and offering to review the code before it is submitted to official standards organizations. This system could make it much easier and faster for automated services to pay for digital content on the fly.</p>
+                        <div class="story-footer">
+                            <span class="story-meta-item">💬 29 replies</span> <span class="story-meta-item">📖 1 min read</span> <time class="story-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                        <span class="read-link" aria-hidden="true">Read discussion →</span>
+                    </a>
+                </article>
+                <article class="top-story-card">
+                    <a class="top-story-link" href="https://kas-smiths.org/t/a-path-towards-universal-covenant/41" target="_blank" rel="noopener noreferrer" aria-label="A path towards Universal Covenant — Development, top story, opens original discussion">
+                        <div class="top-story-meta">
+                            <span class="story-rank" aria-hidden="true">3</span>
+                            <span class="pill pill-category">Development</span>
+                            <span class="pill pill-trend">🔥 Trending</span>
+                        </div>
+                        <h3 class="top-story-title">A path towards Universal Covenant</h3>
+                        <p class="story-what">Tech developers and wallet creators are discussing how to make different smart contracts work smoothly together without needing custom software for every single one. One participant suggested looking at how the Cardano network solves this using a menu of shared standards, while another proposed using AI as a friendly translator between everyday users and complex code.</p>
+                <div class="story-why">
+                    <span class="story-why-label">Why it matters</span>
+                    <p>Ultimately, this matters because it aims to make cryptocurrency apps much easier for regular people to use, removing the frustrating barrier where every new feature requires a brand new wallet update.</p>
                 </div>
-                <h2>REST API drops compute_budget for v1 transactions on testnet-10</h2>
-                <p class="summary">A developer building a token project on the testnet ran into an error where the system ignored their custom transaction budgets, causing their submissions to fail. Other users pointed out that bypassing the public web interface and connecting directly to the node solves the problem, and noted that a code fix is already in the works to permanently resolve these glitches.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 4 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 55 views
+                        <div class="story-footer">
+                            <span class="story-meta-item">💬 13 replies</span> <span class="story-meta-item">📖 1 min read</span> <time class="story-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                        <span class="read-link" aria-hidden="true">Read discussion →</span>
+                    </a>
+                </article>
+                <article class="top-story-card">
+                    <a class="top-story-link" href="https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78" target="_blank" rel="noopener noreferrer" aria-label="Create a Kaspa Smiths Brand — Community, top story, opens original discussion">
+                        <div class="top-story-meta">
+                            <span class="story-rank" aria-hidden="true">4</span>
+                            <span class="pill pill-category">Community</span>
+                            <span class="pill pill-trend">🔥 Trending</span>
+                        </div>
+                        <h3 class="top-story-title">Create a Kaspa Smiths Brand</h3>
+                        <p class="story-what">Community members discussed rebranding &quot;KAS Smiths&quot; to &quot;Kaspa Smiths&quot; to make the name clearer and more closely tied to the official Kaspa project, while also introducing a fresh new logo featuring an anvil and a flame to represent building and forging tools for the network. While one user suggested a preference for the shorter &quot;KasSmith&quot; name and adding a paid posting feature, the overall focus of the discussion was on creating a strong, recognizable brand identity for developers across the ecosystem.</p>
+                        <div class="story-footer">
+                            <span class="story-meta-item">💬 19 replies</span> <span class="story-meta-item">📖 1 min read</span> <time class="story-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                        <span class="read-link" aria-hidden="true">Read discussion →</span>
+                    </a>
+                </article>
+                <article class="top-story-card">
+                    <a class="top-story-link" href="https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74" target="_blank" rel="noopener noreferrer" aria-label="Has there been any discussion of adding `getUtxosByCovenantId`? — Development, top story, opens original discussion">
+                        <div class="top-story-meta">
+                            <span class="story-rank" aria-hidden="true">5</span>
+                            <span class="pill pill-category">Development</span>
+                            <span class="pill pill-trend">🔥 Trending</span>
+                        </div>
+                        <h3 class="top-story-title">Has there been any discussion of adding `getUtxosByCovenantId`?</h3>
+                        <p class="story-what">Community members are discussing a new tool that would allow apps and digital wallets to easily track tokens and blockchain activity directly, without needing to build their own separate tracking systems. While some participants worry about how app developers will manage blockchain data, others point out that this helpful feature is already on the development roadmap and can be used safely.</p>
+                <div class="story-why">
+                    <span class="story-why-label">Why it matters</span>
+                    <p>Adding this feature will make it much easier and faster for developers to build apps and tokens on the network, saving them from having to set up complicated, behind-the-scenes databases.</p>
                 </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/this-is-magic-sharing-a-moment-that-brings-me-great-joy/129" target="_blank" rel="noopener noreferrer" aria-label="This is magic... sharing a moment that brings me great joy">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>This is magic... sharing a moment that brings me great joy</h2>
-                <p class="summary">A developer shared a moment of excitement after successfully running a complex code test for a new blockchain project on the Kaspa network. What started as an experiment in tracking portable user reputations is now growing into a full system for decentralized voting and decision-making. This matters because the project aims to build a tool where everyday users can securely act as trusted information sources, moving closer to a completely community-run governance suite.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 38 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78" target="_blank" rel="noopener noreferrer" aria-label="Create a Kaspa Smiths Brand">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Create a Kaspa Smiths Brand</h2>
-                <p class="summary">Community members discussed rebranding &quot;KAS Smiths&quot; to &quot;Kaspa Smiths&quot; to make the name clearer and more closely tied to the official Kaspa project, while also introducing a fresh new logo featuring an anvil and a flame to represent building and forging tools for the network. While one user suggested a preference for the shorter &quot;KasSmith&quot; name and adding a paid posting feature, the overall focus of the discussion was on creating a strong, recognizable brand identity for developers across the ecosystem.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 19 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 133 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124" target="_blank" rel="noopener noreferrer" aria-label="KCC721 proposal: Kaspa NFTs with covenant rules">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>KCC721 proposal: Kaspa NFTs with covenant rules</h2>
-                <p class="summary">Developers have released an early draft for &quot;KCC721,&quot; a new way to handle NFTs on Kaspa that keeps them native to the network and allows users to send multiple NFTs in a single transaction. A community member also asked if this batch-transfer feature could be applied to Kaspa Name Service (KNS) domains. 
-
-This matters because it could make managing and trading multiple Kaspa digital collectibles much faster and cheaper, with a working test version already live for the community to try out and discuss.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 43 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57" target="_blank" rel="noopener noreferrer" aria-label="Permissionless Covenant-Based Prediction Markets – High-Level Sketch">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Permissionless Covenant-Based Prediction Markets – High-Level Sketch</h2>
-                <p class="summary">A community member proposed a new way to create open, community-run betting games—called prediction markets—where anyone can ask a question, set an end date, and let people trade &quot;yes&quot; or &quot;no&quot; tokens. To make sure winners always get paid, the system requires an equal number of both tokens to be created at the start, and relies on token holders to vote on the correct outcome once the event ends. While relying on voters isn&#x27;t foolproof, the group agreed that adding reward incentives could encourage people to vote honestly and make the system work smoothly.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 8 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 101 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/covenant-tokens-are-the-only-kaspa-token-type-still-missing-metadata/98" target="_blank" rel="noopener noreferrer" aria-label="Covenant tokens are the only Kaspa token type still missing metadata">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Covenant tokens are the only Kaspa token type still missing metadata</h2>
-                <p class="summary">Kaspa community members discussed how &quot;covenant tokens&quot; are currently the only type of Kaspa token missing basic information like a name, logo, or decimals, making them look blank on tracking apps. To fix this, developers have proposed a new standard called KCC-0021 that lets creators attach names, images, and symbols to these tokens right from the start. This solution keeps the underlying technology clean while making it much easier for everyday users to actually recognize and view their tokens on apps and marketplaces.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 8 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 110 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15" target="_blank" rel="noopener noreferrer" aria-label="Kaspa x402: pay-per-request KAS payments for APIs and AI agents">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Kaspa x402: pay-per-request KAS payments for APIs and AI agents</h2>
-                <p class="summary">A developer shared a new tool that allows websites and AI bots to automatically make micro-payments using Kaspa for every individual data request. The community responded very positively, supporting the proposed naming system and offering to review the code before it is submitted to official standards organizations. This system could make it much easier and faster for automated services to pay for digital content on the fly.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 29 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 419 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/exploring-a-trust-minimized-krc-20-to-kcc-20-bridge-on-kaspa-without-relying-on-a-relayer/126" target="_blank" rel="noopener noreferrer" aria-label="Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer</h2>
-                <p class="summary">Crypto builders were discussing how to securely move tokens between different parts of the Kaspa network without having to trust a middleman. Someone suggested using smart contract &quot;covenants,&quot; but the main roadblock is that Kaspa&#x27;s base network cannot currently read the off-chain ledger records needed to verify token balances. 
-
-Ultimately, the discussion highlights that a fully trust-free bridge is currently blocked because the necessary proof systems (like ZK proofs or state checkpoints) aren&#x27;t yet available on Kaspa to verify token transactions on-chain.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 39 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74" target="_blank" rel="noopener noreferrer" aria-label="Has there been any discussion of adding `getUtxosByCovenantId`?">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:12 UTC</time>
-                </div>
-                <h2>Has there been any discussion of adding `getUtxosByCovenantId`?</h2>
-                <p class="summary">Community members are discussing a new tool that would allow apps and digital wallets to easily track tokens and blockchain activity directly, without needing to build their own separate tracking systems. While some participants worry about how app developers will manage blockchain data, others point out that this helpful feature is already on the development roadmap and can be used safely. 
-
-**Why it matters:** 
-Adding this feature will make it much easier and faster for developers to build apps and tokens on the network, saving them from having to set up complicated, behind-the-scenes databases.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 7 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 124 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/public-archive-of-kas-smiths/109" target="_blank" rel="noopener noreferrer" aria-label="Public archive of Kas-Smiths">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Public archive of Kas-Smiths</h2>
-                <p class="summary">The forum maintainer has created an automated public backup of all Kas-Smiths discussions on GitHub. This ensures the community&#x27;s history and knowledge are safely preserved for the future. This matters because it keeps the platform&#x27;s valuable technical history open, transparent, and safe from ever disappearing.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 1 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 32 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/sdk-development/99" target="_blank" rel="noopener noreferrer" aria-label="Sdk Development">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Sdk Development</h2>
-                <p class="summary">A developer successfully launched a test financial contract on the Kaspa network, but hit a roadblock because a necessary tool for interacting with it was missing from the official Python release, and building it from source caused technical errors. 
-
-Luckily, a project maintainer quickly stepped in to save the day, promising to release a temporary update later that day with the missing tools included, and asked the developer to report the installation bug on GitHub so it can be fixed permanently.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 5 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 51 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95" target="_blank" rel="noopener noreferrer" aria-label="KCC-02: Control Principal References in Program ABIs">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>KCC-02: Control Principal References in Program ABIs</h2>
-                <p class="summary">The discussion focuses on how smart contracts should clearly define who &quot;owns&quot; or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 56 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/kaspa-as-an-immutable-seal/31" target="_blank" rel="noopener noreferrer" aria-label="Kaspa as an immutable seal">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Kaspa as an immutable seal</h2>
-                <p class="summary">Community members are discussing a clever way to prove a document existed at a specific time and hasn&#x27;t been tampered with, without actually uploading the private file to the blockchain. Instead, they use a unique digital fingerprint (or &quot;hash&quot;) of the document and record it on the Kaspa network using a simple transaction. 
-
-This matters because it offers a fast, incredibly cheap, and secure way to create permanent digital records and track official document updates over time.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 74 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/would-a-project-audit-jury-be-a-good-implementation-for-kas-smiths-at-this-time/83" target="_blank" rel="noopener noreferrer" aria-label="Would a &quot;project audit &#x27;jury&#x27;&quot; be a good implementation for Kas-Smiths at this time?">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Would a &quot;project audit &#x27;jury&#x27;&quot; be a good implementation for Kas-Smiths at this time?</h2>
-                <p class="summary">A community member suggested creating a &quot;jury&quot; of experienced developers and volunteers to review ongoing projects, help fix design flaws, and share useful knowledge. Another participant liked the idea in theory, but worried that auditing would take up too much time and energy, especially since many creators rely on AI tools and might not fully understand the underlying technology themselves. 
-
-While the proposal highlights a strong need for better collaboration and catching missed opportunities, there is no final agreement yet on whether the benefits of a formal audit team would outweigh the heavy workload.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 52 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/a-path-towards-universal-covenant/41" target="_blank" rel="noopener noreferrer" aria-label="A path towards Universal Covenant">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>A path towards Universal Covenant</h2>
-                <p class="summary">Tech developers and wallet creators are discussing how to make different smart contracts work smoothly together without needing custom software for every single one. One participant suggested looking at how the Cardano network solves this using a menu of shared standards, while another proposed using AI as a friendly translator between everyday users and complex code. 
-
-Ultimately, this matters because it aims to make cryptocurrency apps much easier for regular people to use, removing the frustrating barrier where every new feature requires a brand new wallet update.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 13 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 210 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/a-privacy-focused-stablecoin/87" target="_blank" rel="noopener noreferrer" aria-label="A privacy-focused stablecoin">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>A privacy-focused stablecoin</h2>
-                <p class="summary">People on the forum were discussing the idea of creating a digital coin that stays stable in value like regular cash, but also keeps transactions private. Someone replied that a major company, Tether, is exploring new technology on the Bitcoin network that hides transaction details from public view. This matters because it shows how developers might soon be able to build a stable, private digital currency using existing blockchain security without exposing users&#x27; personal financial history.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 49 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/hello-all-i-am-karrrl/24" target="_blank" rel="noopener noreferrer" aria-label="Hello all! I am Karrrl">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Hello all! I am Karrrl</h2>
-                <p class="summary">A user named Karrrl shared a new computer project called &quot;BitPhoque,&quot; which is a type of digital token built on the Kaspa network. Another community member chimed in with a lighthearted, friendly compliment about the project&#x27;s playful name. 
-
-This matters because it shows developers actively building and testing new features on Kaspa, helping the network grow and expand its capabilities for everyday users.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 63 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/using-covenants-for-user-verifications/86" target="_blank" rel="noopener noreferrer" aria-label="Using Covenants for User verifications">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Using Covenants for User verifications</h2>
-                <p class="summary">A developer asked if they could use the Kaspa cryptocurrency network to check a user&#x27;s security clearance before letting them access special app content. Another community member replied that Kaspa is strictly designed for handling money, not for logging users in or managing security levels. 
-
-The consensus is that you cannot use Kaspa as an authentication tool, meaning the developer will need to use a traditional login system for user verifications instead.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 35 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/kaspa-calls-for-conventions-new-kcc-repo/84" target="_blank" rel="noopener noreferrer" aria-label="Kaspa Calls for Conventions (new KCC repo)">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Kaspa Calls for Conventions (new KCC repo)</h2>
-                <p class="summary">The Kaspa community has launched a new online space called &quot;Kaspa Calls for Conventions&quot; (KCC) to help different developers and apps work better together. Think of it as a shared idea board where people can agree on common standards for things like digital wallets and tools, without changing the core foundation of Kaspa. This matters because it makes it much easier for different apps and wallets to speak the same language and seamlessly connect with one another.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 1 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 97 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/a-privacy-coin-built-on-kaspa/81" target="_blank" rel="noopener noreferrer" aria-label="A privacy coin built on Kaspa">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>A privacy coin built on Kaspa</h2>
-                <p class="summary">People on the forum were discussing the idea of adding strong privacy features to Kaspa, a very fast and decentralized cryptocurrency network. Another user pointed out that Kaspa normally requires public keys, making transactions visible, but someone else mentioned a new project called Zkas as a potential solution. 
-
-This matters because combining Kaspa&#x27;s fast speed with hidden transaction details could give users the best of both worlds: rapid payments and financial privacy.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 79 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/how-to-understand-and-participate-in-the-kaspa-ecosystem/76" target="_blank" rel="noopener noreferrer" aria-label="How to Understand and Participate in the Kaspa Ecosystem">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>How to Understand and Participate in the Kaspa Ecosystem</h2>
-                <p class="summary">Community members are debating the best place to chat and build the Kaspa network, with some wanting to use Kaspa&#x27;s own custom platform while others prefer mainstream tools like Discourse. The goal is to figure out the easiest way to attract everyday users and developers from outside the community without making things too complicated. Ultimately, the discussion highlights a common crypto dilemma: balancing the use of niche, homegrown apps to show off the technology against using popular, familiar platforms to reach a much larger audience.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 41 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/idea-a-bn254-pairing-check-opcode-unlock-kzg-plonk-universal-trusted-setup/64" target="_blank" rel="noopener noreferrer" aria-label="Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)</h2>
-                <p class="summary">Developers are celebrating the successful launch of private transactions on the Kaspa testnet, but they are frustrated that every new privacy feature currently requires a complex, time-consuming setup ceremony. To fix this, they are proposing a new, low-level technical tool (similar to what Ethereum uses) that would let developers easily build advanced privacy apps without starting from scratch every time. This upgrade matters because it would make building secure, private applications on Kaspa much faster, easier, and safer by borrowing an existing trusted security setup with over 140,000 contributors.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 42 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/looking-for-honest-feedback-from-the-kaspa-community/47" target="_blank" rel="noopener noreferrer" aria-label="Looking for honest feedback from the Kaspa community">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Looking for honest feedback from the Kaspa community</h2>
-                <p class="summary">A non-technical Kaspa fan used an AI tool to build two experimental websites—one demonstrating advanced blockchain features and another acting as an educational resource hub—and bravely asked the online community to review them. Community members need to look at these sites to determine if they actually provide helpful, accurate information or if they are just confusing, AI-generated nonsense that needs to be fixed.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 1 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 43 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/a-covenant-native-framework-for-agentic-commerce-on-kaspa/13" target="_blank" rel="noopener noreferrer" aria-label="A Covenant-Native Framework for Agentic Commerce on Kaspa">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>A Covenant-Native Framework for Agentic Commerce on Kaspa</h2>
-                <p class="summary">A community member introduced &quot;Axiom,&quot; a new conceptual framework that helps autonomous software agents securely handle money, pay for services, and manage escrows directly on the Kaspa blockchain. Another member suggested using a specific cryptographic tool called `OpCheckSigFromStack` to help agents easily and safely authorize their spending intentions. The creator of Axiom welcomed the idea, noting it could serve as a great lightweight security check before the agent locks funds into a smart contract.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 6 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 130 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/hello-kaspa-world/10" target="_blank" rel="noopener noreferrer" aria-label="Hello kaspa world">
-                <div class="card-header">
-                    <span class="badge">🔥 Hot Discussion</span>
-                    <time class="date" datetime="">Aug 23, 2026 11:13 UTC</time>
-                </div>
-                <h2>Hello kaspa world</h2>
-                <p class="summary">A new community member joined the forum and asked how to use Kaspa—a digital currency and blockchain technology—to build a supply chain for pharmaceutical research and development. Another user offered to brainstorm ideas, while a third person shared a detailed list of how Kaspa could improve the drug industry, such as making safety records instant and tracking medications from creation to delivery. 
-
-This discussion matters because it shows how everyday cryptocurrency technology could soon be used to solve major real-world problems in medicine, making drug manufacturing safer, easier to inspect, and completely transparent.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 3 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 89 views
-                </div>
-            </a>
-        </article>
-        
-        <article class="card">
-            <a class="card-link" href="https://kas-smiths.org/t/user-friendly-privacy-features-and-censorship-resistant-stablecoins-like-dai/16" target="_blank" rel="noopener noreferrer" aria-label="User-friendly privacy features and censorship-resistant stablecoins like DAI">
-                <div class="card-header">
-                    
-                    <time class="date" datetime="">Aug 23, 2026 11:14 UTC</time>
-                </div>
-                <h2>User-friendly privacy features and censorship-resistant stablecoins like DAI</h2>
-                <p class="summary">A community member suggested that the Kaspa network needs built-in privacy features—like hidden transaction details—and its own independent digital dollar (similar to DAI) so users don&#x27;t have to rely on outside companies. They pointed out that everyday users and businesses alike don&#x27;t want their financial activity tracked on a fully public ledger. A moderator then moved the conversation to the &quot;Applications&quot; topic to keep the forum organized. 
-
-This discussion matters because adding privacy and independent stablecoins is seen as a crucial step for Kaspa to support advanced financial tools, protect user data, and compete with other major blockchain networks.</p>
-                <div class="card-footer">
-                    <span aria-hidden="true">💬</span> 2 posts
-                    <span style="margin-left:12px;" aria-hidden="true">👁️</span> 64 views
-                </div>
-            </a>
-        </article>
-        
+                        <div class="story-footer">
+                            <span class="story-meta-item">💬 7 replies</span> <span class="story-meta-item">📖 1 min read</span> <time class="story-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                        <span class="read-link" aria-hidden="true">Read discussion →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="filter-section" aria-label="Filter discussions">
+            <div class="category-scroll" role="group" aria-label="Filter by category">
+                <button type="button" class="chip active" data-category="all" aria-pressed="true">All <span class="chip-count">28</span></button>
+                <button type="button" class="chip" data-category="Development" aria-pressed="false">Development <span class="chip-count">6</span></button>
+                <button type="button" class="chip" data-category="Infrastructure" aria-pressed="false">Infrastructure <span class="chip-count">1</span></button>
+                <button type="button" class="chip" data-category="DeFi" aria-pressed="false">DeFi <span class="chip-count">2</span></button>
+                <button type="button" class="chip" data-category="Tokens" aria-pressed="false">Tokens <span class="chip-count">2</span></button>
+                <button type="button" class="chip" data-category="AI" aria-pressed="false">AI <span class="chip-count">3</span></button>
+                <button type="button" class="chip" data-category="Privacy" aria-pressed="false">Privacy <span class="chip-count">3</span></button>
+                <button type="button" class="chip" data-category="NFTs" aria-pressed="false">NFTs <span class="chip-count">1</span></button>
+                <button type="button" class="chip" data-category="Ecosystem" aria-pressed="false">Ecosystem <span class="chip-count">3</span></button>
+                <button type="button" class="chip" data-category="Governance" aria-pressed="false">Governance <span class="chip-count">3</span></button>
+                <button type="button" class="chip" data-category="Community" aria-pressed="false">Community <span class="chip-count">4</span></button>
+            </div>
+        </section>
+        <section class="all-discussions" aria-labelledby="allDiscussionsHeading">
+            <div class="section-heading-row">
+                <h2 id="allDiscussionsHeading" class="section-heading">All Discussions</h2>
+                <span class="result-count" id="resultCount">28 discussions</span>
+            </div>
+            <div class="discussion-grid" id="discussionGrid">
+                <article class="card" data-category="Community">
+                    <a class="card-link" href="https://kas-smiths.org/t/welcome-to-kas-smiths/5" target="_blank" rel="noopener noreferrer" aria-label="Welcome to Kas Smiths! :wave:">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Community</span>
+                        </div>
+                        <h3 class="card-title">Welcome to Kas Smiths! :wave:</h3>
+                        <p class="summary">A new community workshop called &quot;Kas Smiths&quot; has been launched for people to collaborate on tools, wallets, and apps built on the Kaspa network. A community member responded enthusiastically, noting it will be especially helpful for connecting smaller, independent developers.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because it provides a dedicated, practical space where people can pitch ideas, test them out, and build the future of Kaspa together.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Tokens">
+                    <a class="card-link" href="https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8" target="_blank" rel="noopener noreferrer" aria-label="Fungible Token Covenant Specification (KCC20)">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Tokens</span><span class="pill pill-trend-inline">🔥 Trending</span>
+                        </div>
+                        <h3 class="card-title">Fungible Token Covenant Specification (KCC20)</h3>
+                        <p class="summary">Kaspa developers are discussing a new rulebook called &quot;KCC20&quot; to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 46 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Infrastructure">
+                    <a class="card-link" href="https://kas-smiths.org/t/rest-api-drops-compute-budget-for-v1-transactions-on-testnet-10/108" target="_blank" rel="noopener noreferrer" aria-label="REST API drops compute_budget for v1 transactions on testnet-10">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Infrastructure</span>
+                        </div>
+                        <h3 class="card-title">REST API drops compute_budget for v1 transactions on testnet-10</h3>
+                        <p class="summary">A developer building a token project on the testnet ran into an error where the system ignored their custom transaction budgets, causing their submissions to fail. Other users pointed out that bypassing the public web interface and connecting directly to the node solves the problem, and noted that a code fix is already in the works to permanently resolve these glitches.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 4 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Governance">
+                    <a class="card-link" href="https://kas-smiths.org/t/this-is-magic-sharing-a-moment-that-brings-me-great-joy/129" target="_blank" rel="noopener noreferrer" aria-label="This is magic... sharing a moment that brings me great joy">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Governance</span>
+                        </div>
+                        <h3 class="card-title">This is magic... sharing a moment that brings me great joy</h3>
+                        <p class="summary">A developer shared a moment of excitement after successfully running a complex code test for a new blockchain project on the Kaspa network. What started as an experiment in tracking portable user reputations is now growing into a full system for decentralized voting and decision-making. This matters because the project aims to build a tool where everyday users can securely act as trusted information sources, moving closer to a completely community-run governance suite.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Community">
+                    <a class="card-link" href="https://kas-smiths.org/t/create-a-kaspa-smiths-brand/78" target="_blank" rel="noopener noreferrer" aria-label="Create a Kaspa Smiths Brand">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Community</span><span class="pill pill-trend-inline">🔥 Trending</span>
+                        </div>
+                        <h3 class="card-title">Create a Kaspa Smiths Brand</h3>
+                        <p class="summary">Community members discussed rebranding &quot;KAS Smiths&quot; to &quot;Kaspa Smiths&quot; to make the name clearer and more closely tied to the official Kaspa project, while also introducing a fresh new logo featuring an anvil and a flame to represent building and forging tools for the network. While one user suggested a preference for the shorter &quot;KasSmith&quot; name and adding a paid posting feature, the overall focus of the discussion was on creating a strong, recognizable brand identity for developers across the ecosystem.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 19 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="NFTs">
+                    <a class="card-link" href="https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124" target="_blank" rel="noopener noreferrer" aria-label="KCC721 proposal: Kaspa NFTs with covenant rules">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">NFTs</span>
+                        </div>
+                        <h3 class="card-title">KCC721 proposal: Kaspa NFTs with covenant rules</h3>
+                        <p class="summary">Developers have released an early draft for &quot;KCC721,&quot; a new way to handle NFTs on Kaspa that keeps them native to the network and allows users to send multiple NFTs in a single transaction. A community member also asked if this batch-transfer feature could be applied to Kaspa Name Service (KNS) domains.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because it could make managing and trading multiple Kaspa digital collectibles much faster and cheaper, with a working test version already live for the community to try out and discuss.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="DeFi">
+                    <a class="card-link" href="https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57" target="_blank" rel="noopener noreferrer" aria-label="Permissionless Covenant-Based Prediction Markets – High-Level Sketch">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">DeFi</span><span class="pill pill-active-inline">Active</span>
+                        </div>
+                        <h3 class="card-title">Permissionless Covenant-Based Prediction Markets – High-Level Sketch</h3>
+                        <p class="summary">A community member proposed a new way to create open, community-run betting games—called prediction markets—where anyone can ask a question, set an end date, and let people trade &quot;yes&quot; or &quot;no&quot; tokens. To make sure winners always get paid, the system requires an equal number of both tokens to be created at the start, and relies on token holders to vote on the correct outcome once the event ends. While relying on voters isn&#x27;t foolproof, the group agreed that adding reward incentives could encourage people to vote honestly and make the system work smoothly.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 8 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Tokens">
+                    <a class="card-link" href="https://kas-smiths.org/t/covenant-tokens-are-the-only-kaspa-token-type-still-missing-metadata/98" target="_blank" rel="noopener noreferrer" aria-label="Covenant tokens are the only Kaspa token type still missing metadata">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Tokens</span><span class="pill pill-active-inline">Active</span>
+                        </div>
+                        <h3 class="card-title">Covenant tokens are the only Kaspa token type still missing metadata</h3>
+                        <p class="summary">Kaspa community members discussed how &quot;covenant tokens&quot; are currently the only type of Kaspa token missing basic information like a name, logo, or decimals, making them look blank on tracking apps. To fix this, developers have proposed a new standard called KCC-0021 that lets creators attach names, images, and symbols to these tokens right from the start. This solution keeps the underlying technology clean while making it much easier for everyday users to actually recognize and view their tokens on apps and marketplaces.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 8 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="AI">
+                    <a class="card-link" href="https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15" target="_blank" rel="noopener noreferrer" aria-label="Kaspa x402: pay-per-request KAS payments for APIs and AI agents">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">AI</span><span class="pill pill-trend-inline">🔥 Trending</span>
+                        </div>
+                        <h3 class="card-title">Kaspa x402: pay-per-request KAS payments for APIs and AI agents</h3>
+                        <p class="summary">A developer shared a new tool that allows websites and AI bots to automatically make micro-payments using Kaspa for every individual data request. The community responded very positively, supporting the proposed naming system and offering to review the code before it is submitted to official standards organizations. This system could make it much easier and faster for automated services to pay for digital content on the fly.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 29 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="DeFi">
+                    <a class="card-link" href="https://kas-smiths.org/t/exploring-a-trust-minimized-krc-20-to-kcc-20-bridge-on-kaspa-without-relying-on-a-relayer/126" target="_blank" rel="noopener noreferrer" aria-label="Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">DeFi</span>
+                        </div>
+                        <h3 class="card-title">Exploring a trust-minimized KRC-20 to KCC-20 bridge on Kaspa without relying on a relayer</h3>
+                        <p class="summary">Crypto builders were discussing how to securely move tokens between different parts of the Kaspa network without having to trust a middleman. Someone suggested using smart contract &quot;covenants,&quot; but the main roadblock is that Kaspa&#x27;s base network cannot currently read the off-chain ledger records needed to verify token balances.</p><p class="card-why"><span class="card-why-label">Why it matters</span>Ultimately, the discussion highlights that a fully trust-free bridge is currently blocked because the necessary proof systems (like ZK proofs or state checkpoints) aren&#x27;t yet available on Kaspa to verify token transactions on-chain.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/has-there-been-any-discussion-of-adding-getutxosbycovenantid/74" target="_blank" rel="noopener noreferrer" aria-label="Has there been any discussion of adding `getUtxosByCovenantId`?">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span><span class="pill pill-trend-inline">🔥 Trending</span>
+                        </div>
+                        <h3 class="card-title">Has there been any discussion of adding `getUtxosByCovenantId`?</h3>
+                        <p class="summary">Community members are discussing a new tool that would allow apps and digital wallets to easily track tokens and blockchain activity directly, without needing to build their own separate tracking systems. While some participants worry about how app developers will manage blockchain data, others point out that this helpful feature is already on the development roadmap and can be used safely.</p><p class="card-why"><span class="card-why-label">Why it matters</span>Adding this feature will make it much easier and faster for developers to build apps and tokens on the network, saving them from having to set up complicated, behind-the-scenes databases.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 7 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:12:00+00:00">Aug 23, 2026 11:12 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Ecosystem">
+                    <a class="card-link" href="https://kas-smiths.org/t/public-archive-of-kas-smiths/109" target="_blank" rel="noopener noreferrer" aria-label="Public archive of Kas-Smiths">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Ecosystem</span>
+                        </div>
+                        <h3 class="card-title">Public archive of Kas-Smiths</h3>
+                        <p class="summary">The forum maintainer has created an automated public backup of all Kas-Smiths discussions on GitHub. This ensures the community&#x27;s history and knowledge are safely preserved for the future. This matters because it keeps the platform&#x27;s valuable technical history open, transparent, and safe from ever disappearing.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 1 reply</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/sdk-development/99" target="_blank" rel="noopener noreferrer" aria-label="Sdk Development">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span><span class="pill pill-active-inline">Active</span>
+                        </div>
+                        <h3 class="card-title">Sdk Development</h3>
+                        <p class="summary">A developer successfully launched a test financial contract on the Kaspa network, but hit a roadblock because a necessary tool for interacting with it was missing from the official Python release, and building it from source caused technical errors.</p><p class="card-why"><span class="card-why-label">Why it matters</span>Luckily, a project maintainer quickly stepped in to save the day, promising to release a temporary update later that day with the missing tools included, and asked the developer to report the installation bug on GitHub so it can be fixed permanently.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 5 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Governance">
+                    <a class="card-link" href="https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95" target="_blank" rel="noopener noreferrer" aria-label="KCC-02: Control Principal References in Program ABIs">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Governance</span>
+                        </div>
+                        <h3 class="card-title">KCC-02: Control Principal References in Program ABIs</h3>
+                        <p class="summary">The discussion focuses on how smart contracts should clearly define who &quot;owns&quot; or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Ecosystem">
+                    <a class="card-link" href="https://kas-smiths.org/t/kaspa-as-an-immutable-seal/31" target="_blank" rel="noopener noreferrer" aria-label="Kaspa as an immutable seal">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Ecosystem</span>
+                        </div>
+                        <h3 class="card-title">Kaspa as an immutable seal</h3>
+                        <p class="summary">Community members are discussing a clever way to prove a document existed at a specific time and hasn&#x27;t been tampered with, without actually uploading the private file to the blockchain. Instead, they use a unique digital fingerprint (or &quot;hash&quot;) of the document and record it on the Kaspa network using a simple transaction.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because it offers a fast, incredibly cheap, and secure way to create permanent digital records and track official document updates over time.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Governance">
+                    <a class="card-link" href="https://kas-smiths.org/t/would-a-project-audit-jury-be-a-good-implementation-for-kas-smiths-at-this-time/83" target="_blank" rel="noopener noreferrer" aria-label="Would a &quot;project audit &#x27;jury&#x27;&quot; be a good implementation for Kas-Smiths at this time?">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Governance</span>
+                        </div>
+                        <h3 class="card-title">Would a &quot;project audit &#x27;jury&#x27;&quot; be a good implementation for Kas-Smiths at this time?</h3>
+                        <p class="summary">A community member suggested creating a &quot;jury&quot; of experienced developers and volunteers to review ongoing projects, help fix design flaws, and share useful knowledge. Another participant liked the idea in theory, but worried that auditing would take up too much time and energy, especially since many creators rely on AI tools and might not fully understand the underlying technology themselves.</p><p class="card-why"><span class="card-why-label">Why it matters</span>While the proposal highlights a strong need for better collaboration and catching missed opportunities, there is no final agreement yet on whether the benefits of a formal audit team would outweigh the heavy workload.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/a-path-towards-universal-covenant/41" target="_blank" rel="noopener noreferrer" aria-label="A path towards Universal Covenant">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span><span class="pill pill-trend-inline">🔥 Trending</span>
+                        </div>
+                        <h3 class="card-title">A path towards Universal Covenant</h3>
+                        <p class="summary">Tech developers and wallet creators are discussing how to make different smart contracts work smoothly together without needing custom software for every single one. One participant suggested looking at how the Cardano network solves this using a menu of shared standards, while another proposed using AI as a friendly translator between everyday users and complex code.</p><p class="card-why"><span class="card-why-label">Why it matters</span>Ultimately, this matters because it aims to make cryptocurrency apps much easier for regular people to use, removing the frustrating barrier where every new feature requires a brand new wallet update.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 13 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Privacy">
+                    <a class="card-link" href="https://kas-smiths.org/t/a-privacy-focused-stablecoin/87" target="_blank" rel="noopener noreferrer" aria-label="A privacy-focused stablecoin">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Privacy</span>
+                        </div>
+                        <h3 class="card-title">A privacy-focused stablecoin</h3>
+                        <p class="summary">People on the forum were discussing the idea of creating a digital coin that stays stable in value like regular cash, but also keeps transactions private. Someone replied that a major company, Tether, is exploring new technology on the Bitcoin network that hides transaction details from public view. This matters because it shows how developers might soon be able to build a stable, private digital currency using existing blockchain security without exposing users&#x27; personal financial history.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Community">
+                    <a class="card-link" href="https://kas-smiths.org/t/hello-all-i-am-karrrl/24" target="_blank" rel="noopener noreferrer" aria-label="Hello all! I am Karrrl">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Community</span>
+                        </div>
+                        <h3 class="card-title">Hello all! I am Karrrl</h3>
+                        <p class="summary">A user named Karrrl shared a new computer project called &quot;BitPhoque,&quot; which is a type of digital token built on the Kaspa network. Another community member chimed in with a lighthearted, friendly compliment about the project&#x27;s playful name.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because it shows developers actively building and testing new features on Kaspa, helping the network grow and expand its capabilities for everyday users.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/using-covenants-for-user-verifications/86" target="_blank" rel="noopener noreferrer" aria-label="Using Covenants for User verifications">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span>
+                        </div>
+                        <h3 class="card-title">Using Covenants for User verifications</h3>
+                        <p class="summary">A developer asked if they could use the Kaspa cryptocurrency network to check a user&#x27;s security clearance before letting them access special app content. Another community member replied that Kaspa is strictly designed for handling money, not for logging users in or managing security levels.</p><p class="card-why"><span class="card-why-label">Why it matters</span>The consensus is that you cannot use Kaspa as an authentication tool, meaning the developer will need to use a traditional login system for user verifications instead.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/kaspa-calls-for-conventions-new-kcc-repo/84" target="_blank" rel="noopener noreferrer" aria-label="Kaspa Calls for Conventions (new KCC repo)">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span>
+                        </div>
+                        <h3 class="card-title">Kaspa Calls for Conventions (new KCC repo)</h3>
+                        <p class="summary">The Kaspa community has launched a new online space called &quot;Kaspa Calls for Conventions&quot; (KCC) to help different developers and apps work better together. Think of it as a shared idea board where people can agree on common standards for things like digital wallets and tools, without changing the core foundation of Kaspa. This matters because it makes it much easier for different apps and wallets to speak the same language and seamlessly connect with one another.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 1 reply</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Privacy">
+                    <a class="card-link" href="https://kas-smiths.org/t/a-privacy-coin-built-on-kaspa/81" target="_blank" rel="noopener noreferrer" aria-label="A privacy coin built on Kaspa">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Privacy</span>
+                        </div>
+                        <h3 class="card-title">A privacy coin built on Kaspa</h3>
+                        <p class="summary">People on the forum were discussing the idea of adding strong privacy features to Kaspa, a very fast and decentralized cryptocurrency network. Another user pointed out that Kaspa normally requires public keys, making transactions visible, but someone else mentioned a new project called Zkas as a potential solution.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This matters because combining Kaspa&#x27;s fast speed with hidden transaction details could give users the best of both worlds: rapid payments and financial privacy.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Ecosystem">
+                    <a class="card-link" href="https://kas-smiths.org/t/how-to-understand-and-participate-in-the-kaspa-ecosystem/76" target="_blank" rel="noopener noreferrer" aria-label="How to Understand and Participate in the Kaspa Ecosystem">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Ecosystem</span>
+                        </div>
+                        <h3 class="card-title">How to Understand and Participate in the Kaspa Ecosystem</h3>
+                        <p class="summary">Community members are debating the best place to chat and build the Kaspa network, with some wanting to use Kaspa&#x27;s own custom platform while others prefer mainstream tools like Discourse. The goal is to figure out the easiest way to attract everyday users and developers from outside the community without making things too complicated. Ultimately, the discussion highlights a common crypto dilemma: balancing the use of niche, homegrown apps to show off the technology against using popular, familiar platforms to reach a much larger audience.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Development">
+                    <a class="card-link" href="https://kas-smiths.org/t/idea-a-bn254-pairing-check-opcode-unlock-kzg-plonk-universal-trusted-setup/64" target="_blank" rel="noopener noreferrer" aria-label="Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Development</span>
+                        </div>
+                        <h3 class="card-title">Idea: a BN254 pairing-check opcode (unlock KZG/PLONK, universal trusted setup)</h3>
+                        <p class="summary">Developers are celebrating the successful launch of private transactions on the Kaspa testnet, but they are frustrated that every new privacy feature currently requires a complex, time-consuming setup ceremony. To fix this, they are proposing a new, low-level technical tool (similar to what Ethereum uses) that would let developers easily build advanced privacy apps without starting from scratch every time. This upgrade matters because it would make building secure, private applications on Kaspa much faster, easier, and safer by borrowing an existing trusted security setup with over 140,000 contributors.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="AI">
+                    <a class="card-link" href="https://kas-smiths.org/t/looking-for-honest-feedback-from-the-kaspa-community/47" target="_blank" rel="noopener noreferrer" aria-label="Looking for honest feedback from the Kaspa community">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">AI</span>
+                        </div>
+                        <h3 class="card-title">Looking for honest feedback from the Kaspa community</h3>
+                        <p class="summary">A non-technical Kaspa fan used an AI tool to build two experimental websites—one demonstrating advanced blockchain features and another acting as an educational resource hub—and bravely asked the online community to review them. Community members need to look at these sites to determine if they actually provide helpful, accurate information or if they are just confusing, AI-generated nonsense that needs to be fixed.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 1 reply</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="AI">
+                    <a class="card-link" href="https://kas-smiths.org/t/a-covenant-native-framework-for-agentic-commerce-on-kaspa/13" target="_blank" rel="noopener noreferrer" aria-label="A Covenant-Native Framework for Agentic Commerce on Kaspa">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">AI</span><span class="pill pill-active-inline">Active</span>
+                        </div>
+                        <h3 class="card-title">A Covenant-Native Framework for Agentic Commerce on Kaspa</h3>
+                        <p class="summary">A community member introduced &quot;Axiom,&quot; a new conceptual framework that helps autonomous software agents securely handle money, pay for services, and manage escrows directly on the Kaspa blockchain. Another member suggested using a specific cryptographic tool called `OpCheckSigFromStack` to help agents easily and safely authorize their spending intentions. The creator of Axiom welcomed the idea, noting it could serve as a great lightweight security check before the agent locks funds into a smart contract.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 6 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Community">
+                    <a class="card-link" href="https://kas-smiths.org/t/hello-kaspa-world/10" target="_blank" rel="noopener noreferrer" aria-label="Hello kaspa world">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Community</span>
+                        </div>
+                        <h3 class="card-title">Hello kaspa world</h3>
+                        <p class="summary">A new community member joined the forum and asked how to use Kaspa—a digital currency and blockchain technology—to build a supply chain for pharmaceutical research and development. Another user offered to brainstorm ideas, while a third person shared a detailed list of how Kaspa could improve the drug industry, such as making safety records instant and tracking medications from creation to delivery.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This discussion matters because it shows how everyday cryptocurrency technology could soon be used to solve major real-world problems in medicine, making drug manufacturing safer, easier to inspect, and completely transparent.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 3 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:13:00+00:00">Aug 23, 2026 11:13 UTC</time>
+                        </div>
+                    </a>
+                </article>
+                <article class="card" data-category="Privacy">
+                    <a class="card-link" href="https://kas-smiths.org/t/user-friendly-privacy-features-and-censorship-resistant-stablecoins-like-dai/16" target="_blank" rel="noopener noreferrer" aria-label="User-friendly privacy features and censorship-resistant stablecoins like DAI">
+                        <div class="card-meta">
+                            <span class="pill pill-category-inline">Privacy</span>
+                        </div>
+                        <h3 class="card-title">User-friendly privacy features and censorship-resistant stablecoins like DAI</h3>
+                        <p class="summary">A community member suggested that the Kaspa network needs built-in privacy features—like hidden transaction details—and its own independent digital dollar (similar to DAI) so users don&#x27;t have to rely on outside companies. They pointed out that everyday users and businesses alike don&#x27;t want their financial activity tracked on a fully public ledger. A moderator then moved the conversation to the &quot;Applications&quot; topic to keep the forum organized.</p><p class="card-why"><span class="card-why-label">Why it matters</span>This discussion matters because adding privacy and independent stablecoins is seen as a crucial step for Kaspa to support advanced financial tools, protect user data, and compete with other major blockchain networks.</p>
+                        <div class="card-footer">
+                            <span class="card-meta-item">💬 2 replies</span> <span class="card-meta-item">📖 1 min</span> <time class="card-meta-item" datetime="2026-08-23T11:14:00+00:00">Aug 23, 2026 11:14 UTC</time>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <div class="empty-filter-state" id="emptyState" hidden>
+                <p>No discussions match your filters.</p>
+                <button type="button" class="link-button" id="clearFilters">Clear filters</button>
+            </div>
+        </section>
     </main>
+    <footer class="site-footer">
+        <p>Katch-Up tracks public discussions on <a href="https://kas-smiths.org">Kas-Smiths</a>. The forum is always the authoritative place to read and reply.</p>
+    </footer>
+    <script>
+    (function () {
+        var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+        var cards = Array.prototype.slice.call(document.querySelectorAll('#discussionGrid .card'));
+        var searchInput = document.getElementById('searchInput');
+        var resultCount = document.getElementById('resultCount');
+        var emptyState = document.getElementById('emptyState');
+        var clearFiltersBtn = document.getElementById('clearFilters');
+        var discussionGrid = document.getElementById('discussionGrid');
+        var activeCategory = 'all';
+
+        function normalize(s) { return (s || '').toLowerCase(); }
+
+        function applyFilters() {
+            var query = normalize(searchInput ? searchInput.value : '');
+            var visibleCount = 0;
+
+            cards.forEach(function (card) {
+                var category = card.getAttribute('data-category') || '';
+                var matchesCategory = activeCategory === 'all' || category === activeCategory;
+                var matchesSearch = query === '' || normalize(card.textContent).indexOf(query) !== -1;
+                var visible = matchesCategory && matchesSearch;
+                card.hidden = !visible;
+                if (visible) visibleCount++;
+            });
+
+            if (resultCount) {
+                resultCount.textContent = visibleCount + (visibleCount === 1 ? ' discussion' : ' discussions');
+            }
+            if (emptyState) emptyState.hidden = visibleCount !== 0;
+            if (discussionGrid) discussionGrid.hidden = visibleCount === 0;
+        }
+
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                chips.forEach(function (c) {
+                    c.classList.remove('active');
+                    c.setAttribute('aria-pressed', 'false');
+                });
+                chip.classList.add('active');
+                chip.setAttribute('aria-pressed', 'true');
+                activeCategory = chip.getAttribute('data-category');
+                applyFilters();
+            });
+        });
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', function () {
+                activeCategory = 'all';
+                if (searchInput) searchInput.value = '';
+                chips.forEach(function (c) {
+                    var isAll = c.getAttribute('data-category') === 'all';
+                    c.classList.toggle('active', isAll);
+                    c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+                });
+                applyFilters();
+            });
+        }
+    })();
+</script>
 </body>
 </html>
