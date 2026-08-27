@@ -17,9 +17,9 @@ This matters because it provides a dedicated, practical space where people can p
         <item>
             <title>Fungible Token Covenant Specification (KCC20)</title>
             <link>https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</link>
-            <description>Kaspa developers are discussing a new rulebook called &quot;KCC20&quot; to help create a shared standard for digital tokens and currencies on the network. Community members are figuring out how to keep this core token system simple while leaving room for advanced features like stablecoins, minting, and freezing. 
+            <description>A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle optional features like minting and burning, and noted the need for guidelines to help wallet developers support the new standard.
 
-This matters because having a clear, universal standard ensures that different wallets, tools, and apps can all understand and trade these tokens smoothly without breaking the system as it grows.</description>
+It lays the groundwork for interoperable native fungible tokens and wallets on Kaspa.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</guid>
             <pubDate>Sun, 23 Aug 2026 11:12:00 +0000</pubDate>
         </item>
