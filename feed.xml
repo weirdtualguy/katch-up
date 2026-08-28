@@ -56,7 +56,9 @@ This matters because it could make managing and trading multiple Kaspa digital c
         <item>
             <title>Permissionless Covenant-Based Prediction Markets – High-Level Sketch</title>
             <link>https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57</link>
-            <description>A community member proposed a new way to create open, community-run betting games—called prediction markets—where anyone can ask a question, set an end date, and let people trade &quot;yes&quot; or &quot;no&quot; tokens. To make sure winners always get paid, the system requires an equal number of both tokens to be created at the start, and relies on token holders to vote on the correct outcome once the event ends. While relying on voters isn&#x27;t foolproof, the group agreed that adding reward incentives could encourage people to vote honestly and make the system work smoothly.</description>
+            <description>A community member proposed a high-level design for permissionless, covenant-based prediction markets using the KCC token standard, where participants mint paired YES and NO tokens and vote on outcomes after maturity.
+
+It outlines a potential new utility for Kaspa&#x27;s covenant system to support decentralized prediction markets and tokenized voting mechanisms.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/permissionless-covenant-based-prediction-markets-high-level-sketch/57</guid>
             <pubDate>Sun, 23 Aug 2026 11:12:00 +0000</pubDate>
         </item>
