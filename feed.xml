@@ -17,9 +17,9 @@ This matters because it provides a dedicated, practical space where people can p
         <item>
             <title>Fungible Token Covenant Specification (KCC20)</title>
             <link>https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</link>
-            <description>A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle optional features like minting and burning, and noted the need for guidelines to help wallet developers support the new standard.
+            <description>A draft specification called KCC20 was proposed to establish a minimal fungible-token covenant standard on Kaspa, ensuring interoperability and consistency for token UTXOs. Community members discussed how to handle advanced features like minting and burning without overloading the core interface.
 
-It lays the groundwork for interoperable native fungible tokens and wallets on Kaspa.</description>
+Establishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</guid>
             <pubDate>Sun, 23 Aug 2026 11:12:00 +0000</pubDate>
         </item>
@@ -47,9 +47,9 @@ It lays the groundwork for interoperable native fungible tokens and wallets on K
         <item>
             <title>KCC721 proposal: Kaspa NFTs with covenant rules</title>
             <link>https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124</link>
-            <description>Developers have released an early draft for &quot;KCC721,&quot; a new way to handle NFTs on Kaspa that keeps them native to the network and allows users to send multiple NFTs in a single transaction. A community member also asked if this batch-transfer feature could be applied to Kaspa Name Service (KNS) domains. 
+            <description>Developers published an open draft for KCC721 on GitHub, a proposal to make Kaspa NFTs UTXO-native, incorporate covenant rules for added utility, and enable atomic batch transfers.
 
-This matters because it could make managing and trading multiple Kaspa digital collectibles much faster and cheaper, with a working test version already live for the community to try out and discuss.</description>
+This proposal aims to enhance Kaspa&#x27;s NFT capabilities by introducing covenant features and atomic batch transfers, supported by a functional mainnet demo.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kcc721-proposal-kaspa-nfts-with-covenant-rules/124</guid>
             <pubDate>Sun, 23 Aug 2026 11:12:00 +0000</pubDate>
         </item>
