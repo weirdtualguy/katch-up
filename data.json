@@ -1,6 +1,44 @@
 {
   "topics": [
     {
+      "id": 141,
+      "title": "KCC-01 Discussion Thread",
+      "slug": "kcc-01-discussion-thread",
+      "url": "https://kas-smiths.org/t/kcc-01-discussion-thread/141",
+      "summary": "A community member raised technical questions and pointed out compatibility issues between the KCC-01 specification and existing script builder methods regarding integer and boolean representations.\n\nClarifying specification standards like KCC-01 ensures smoother implementation for developers building on Kaspa.",
+      "what_happened": "A community member raised technical questions and pointed out compatibility issues between the KCC-01 specification and existing script builder methods regarding integer and boolean representations.",
+      "why_it_matters": "Clarifying specification standards like KCC-01 ensures smoother implementation for developers building on Kaspa.",
+      "whats_next": null,
+      "category": "Development",
+      "model": "gemini-3.5-flash-lite",
+      "posts_count": 1,
+      "views": 4,
+      "is_hot": false,
+      "iso_date": "2026-08-29T12:00:00.045287+00:00",
+      "updated_at": "Aug 29, 2026 12:00 UTC",
+      "last_updated_date": "2026-08-29",
+      "history": []
+    },
+    {
+      "id": 140,
+      "title": "Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts",
+      "slug": "proof-gated-covenant-ownership-of-kcc20-state-worked",
+      "url": "https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140",
+      "summary": "Summary unavailable at this time.",
+      "what_happened": "Summary unavailable at this time.",
+      "why_it_matters": null,
+      "whats_next": null,
+      "category": "Community",
+      "model": "none",
+      "posts_count": 1,
+      "views": 1,
+      "is_hot": false,
+      "iso_date": "2026-08-29T12:02:36.446245+00:00",
+      "updated_at": "Aug 29, 2026 12:02 UTC",
+      "last_updated_date": "2026-08-29",
+      "history": []
+    },
+    {
       "id": 5,
       "title": "Welcome to Kas Smiths! :wave:",
       "url": "https://kas-smiths.org/t/welcome-to-kas-smiths/5",
@@ -21,17 +59,17 @@
       "id": 8,
       "title": "Fungible Token Covenant Specification (KCC20)",
       "url": "https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8",
-      "summary": "A draft specification called KCC20 was proposed to establish a minimal fungible-token covenant standard on Kaspa, ensuring interoperability and consistency for token UTXOs. Community members discussed how to handle advanced features like minting and burning without overloading the core interface.\n\nEstablishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.",
-      "posts_count": 54,
-      "views": 616,
+      "summary": "A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.\n\nThis discussion lays the groundwork for native token interoperability and wallet support on Kaspa.",
+      "posts_count": 57,
+      "views": 625,
       "is_hot": true,
       "updated_at": "Aug 23, 2026 11:12 UTC",
       "category": "Tokens",
-      "what_happened": "A draft specification called KCC20 was proposed to establish a minimal fungible-token covenant standard on Kaspa, ensuring interoperability and consistency for token UTXOs. Community members discussed how to handle advanced features like minting and burning without overloading the core interface.",
-      "why_it_matters": "Establishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.",
+      "what_happened": "A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.",
+      "why_it_matters": "This discussion lays the groundwork for native token interoperability and wallet support on Kaspa.",
       "iso_date": "2026-08-23T11:12:00+00:00",
       "slug": "fungible-token-covenant-specification-kcc20",
-      "last_updated_date": "2026-08-28",
+      "last_updated_date": "2026-08-29",
       "history": [
         {
           "date": "2026-08-23",
@@ -46,6 +84,13 @@
           "why_it_matters": "It lays the groundwork for interoperable native fungible tokens and wallets on Kaspa.",
           "posts_count": 53,
           "views": 604
+        },
+        {
+          "date": "2026-08-28",
+          "what_happened": "A draft specification called KCC20 was proposed to establish a minimal fungible-token covenant standard on Kaspa, ensuring interoperability and consistency for token UTXOs. Community members discussed how to handle advanced features like minting and burning without overloading the core interface.",
+          "why_it_matters": "Establishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.",
+          "posts_count": 54,
+          "views": 616
         }
       ],
       "whats_next": null,
@@ -256,17 +301,28 @@
       "id": 95,
       "title": "KCC-02: Control Principal References in Program ABIs",
       "url": "https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95",
-      "summary": "The discussion focuses on how smart contracts should clearly define who \"owns\" or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.",
-      "posts_count": 3,
-      "views": 56,
+      "summary": "Contributors proposed KCC-02 to standardize the concept of ownership and principal references within Program ABIs for covenants. Discussion focused on identifying principal roles, maintaining distinct identifiers for covenant lineages versus executable code, and ensuring wallets can verify on-chain state.\n\nThis standard is crucial for wallets and developers to reliably track ownership and control across both simple addresses and complex covenant programs.",
+      "posts_count": 4,
+      "views": 59,
       "is_hot": false,
       "updated_at": "Aug 23, 2026 11:13 UTC",
       "category": "Governance",
-      "what_happened": "The discussion focuses on how smart contracts should clearly define who \"owns\" or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.",
+      "what_happened": "Contributors proposed KCC-02 to standardize the concept of ownership and principal references within Program ABIs for covenants. Discussion focused on identifying principal roles, maintaining distinct identifiers for covenant lineages versus executable code, and ensuring wallets can verify on-chain state.",
       "iso_date": "2026-08-23T11:13:00+00:00",
       "slug": "kcc-02-control-principal-references-in-program-abis",
-      "last_updated_date": "2026-08-23",
-      "history": []
+      "last_updated_date": "2026-08-29",
+      "history": [
+        {
+          "date": "2026-08-23",
+          "what_happened": "The discussion focuses on how smart contracts should clearly define who \"owns\" or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.",
+          "why_it_matters": null,
+          "posts_count": 3,
+          "views": 56
+        }
+      ],
+      "why_it_matters": "This standard is crucial for wallets and developers to reliably track ownership and control across both simple addresses and complex covenant programs.",
+      "whats_next": null,
+      "model": "gemini-3.5-flash-lite"
     },
     {
       "id": 31,

@@ -6,6 +6,22 @@
     <description>The fastest way to understand what's happening in Kaspa, from the Kas-Smiths forum.</description>
     
         <item>
+            <title>KCC-01 Discussion Thread</title>
+            <link>https://kas-smiths.org/t/kcc-01-discussion-thread/141</link>
+            <description>A community member raised technical questions and pointed out compatibility issues between the KCC-01 specification and existing script builder methods regarding integer and boolean representations.
+
+Clarifying specification standards like KCC-01 ensures smoother implementation for developers building on Kaspa.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/kcc-01-discussion-thread/141</guid>
+            <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
+            <link>https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</link>
+            <description>Summary unavailable at this time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</guid>
+            <pubDate>Sat, 29 Aug 2026 12:02:36 +0000</pubDate>
+        </item>
+        <item>
             <title>Welcome to Kas Smiths! :wave:</title>
             <link>https://kas-smiths.org/t/welcome-to-kas-smiths/5</link>
             <description>A new community workshop called &quot;Kas Smiths&quot; has been launched for people to collaborate on tools, wallets, and apps built on the Kaspa network. A community member responded enthusiastically, noting it will be especially helpful for connecting smaller, independent developers. 
@@ -17,9 +33,9 @@ This matters because it provides a dedicated, practical space where people can p
         <item>
             <title>Fungible Token Covenant Specification (KCC20)</title>
             <link>https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</link>
-            <description>A draft specification called KCC20 was proposed to establish a minimal fungible-token covenant standard on Kaspa, ensuring interoperability and consistency for token UTXOs. Community members discussed how to handle advanced features like minting and burning without overloading the core interface.
+            <description>A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.
 
-Establishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.</description>
+This discussion lays the groundwork for native token interoperability and wallet support on Kaspa.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8</guid>
             <pubDate>Sun, 23 Aug 2026 11:12:00 +0000</pubDate>
         </item>
@@ -114,7 +130,9 @@ Luckily, a project maintainer quickly stepped in to save the day, promising to r
         <item>
             <title>KCC-02: Control Principal References in Program ABIs</title>
             <link>https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95</link>
-            <description>The discussion focuses on how smart contracts should clearly define who &quot;owns&quot; or controls a digital token or asset, whether that owner is an individual person or another smart contract program. Participants suggested creating a standard way to list these owners so that crypto wallets can easily scan the blockchain and show users the assets they actually control. The group agreed that keeping different types of identifiers separate is important, and that wallets should always double-check the on-chain data to ensure security before confirming ownership to the user.</description>
+            <description>Contributors proposed KCC-02 to standardize the concept of ownership and principal references within Program ABIs for covenants. Discussion focused on identifying principal roles, maintaining distinct identifiers for covenant lineages versus executable code, and ensuring wallets can verify on-chain state.
+
+This standard is crucial for wallets and developers to reliably track ownership and control across both simple addresses and complex covenant programs.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kcc-02-control-principal-references-in-program-abis/95</guid>
             <pubDate>Sun, 23 Aug 2026 11:13:00 +0000</pubDate>
         </item>
