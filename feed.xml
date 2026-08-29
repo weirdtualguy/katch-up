@@ -6,6 +6,15 @@
     <description>The fastest way to understand what's happening in Kaspa, from the Kas-Smiths forum.</description>
     
         <item>
+            <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
+            <link>https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</link>
+            <description>A developer shared a reference implementation and testnet receipts for a zero-knowledge-proof-gated covenant owning KCC20 state on TN10, utilizing a two-transition authorize and execute pattern.
+
+It demonstrates a keyless, ZK-proof-gated ownership model for KCC20 state running on testnet, showcasing new covenant capabilities for the ecosystem.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</guid>
+            <pubDate>Sat, 29 Aug 2026 16:13:27 +0000</pubDate>
+        </item>
+        <item>
             <title>KCC-01 Discussion Thread</title>
             <link>https://kas-smiths.org/t/kcc-01-discussion-thread/141</link>
             <description>A community member raised technical questions and pointed out compatibility issues between the KCC-01 specification and existing script builder methods regarding integer and boolean representations.
@@ -13,13 +22,6 @@
 Clarifying specification standards like KCC-01 ensures smoother implementation for developers building on Kaspa.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kcc-01-discussion-thread/141</guid>
             <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
-            <link>https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</link>
-            <description>Summary unavailable at this time.</description>
-            <guid isPermaLink="true">https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</guid>
-            <pubDate>Sat, 29 Aug 2026 12:02:36 +0000</pubDate>
         </item>
         <item>
             <title>Welcome to Kas Smiths! :wave:</title>

@@ -1,6 +1,25 @@
 {
   "topics": [
     {
+      "id": 140,
+      "title": "Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts",
+      "slug": "proof-gated-covenant-ownership-of-kcc20-state-worked",
+      "url": "https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140",
+      "summary": "A developer shared a reference implementation and testnet receipts for a zero-knowledge-proof-gated covenant owning KCC20 state on TN10, utilizing a two-transition authorize and execute pattern.\n\nIt demonstrates a keyless, ZK-proof-gated ownership model for KCC20 state running on testnet, showcasing new covenant capabilities for the ecosystem.",
+      "what_happened": "A developer shared a reference implementation and testnet receipts for a zero-knowledge-proof-gated covenant owning KCC20 state on TN10, utilizing a two-transition authorize and execute pattern.",
+      "why_it_matters": "It demonstrates a keyless, ZK-proof-gated ownership model for KCC20 state running on testnet, showcasing new covenant capabilities for the ecosystem.",
+      "whats_next": null,
+      "category": "Development",
+      "model": "gemini-3.5-flash-lite",
+      "posts_count": 1,
+      "views": 2,
+      "is_hot": false,
+      "iso_date": "2026-08-29T16:13:27.358093+00:00",
+      "updated_at": "Aug 29, 2026 16:13 UTC",
+      "last_updated_date": "2026-08-29",
+      "history": []
+    },
+    {
       "id": 141,
       "title": "KCC-01 Discussion Thread",
       "slug": "kcc-01-discussion-thread",
@@ -16,25 +35,6 @@
       "is_hot": false,
       "iso_date": "2026-08-29T12:00:00.045287+00:00",
       "updated_at": "Aug 29, 2026 12:00 UTC",
-      "last_updated_date": "2026-08-29",
-      "history": []
-    },
-    {
-      "id": 140,
-      "title": "Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts",
-      "slug": "proof-gated-covenant-ownership-of-kcc20-state-worked",
-      "url": "https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140",
-      "summary": "Summary unavailable at this time.",
-      "what_happened": "Summary unavailable at this time.",
-      "why_it_matters": null,
-      "whats_next": null,
-      "category": "Community",
-      "model": "none",
-      "posts_count": 1,
-      "views": 1,
-      "is_hot": false,
-      "iso_date": "2026-08-29T12:02:36.446245+00:00",
-      "updated_at": "Aug 29, 2026 12:02 UTC",
       "last_updated_date": "2026-08-29",
       "history": []
     },
