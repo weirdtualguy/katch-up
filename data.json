@@ -59,17 +59,17 @@
       "id": 8,
       "title": "Fungible Token Covenant Specification (KCC20)",
       "url": "https://kas-smiths.org/t/fungible-token-covenant-specification-kcc20/8",
-      "summary": "A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.\n\nThis discussion lays the groundwork for native token interoperability and wallet support on Kaspa.",
-      "posts_count": 57,
-      "views": 625,
+      "summary": "A developer proposed a minimal specification interface called KCC20 for fungible token covenants on Kaspa following the Toccata hard fork, sparking community discussion on handling features like minting, burning, and wallet integration.\n\nEstablishing a shared token covenant standard is crucial for ensuring interoperability and consistency across wallets and tools as native assets emerge on Kaspa.",
+      "posts_count": 58,
+      "views": 631,
       "is_hot": true,
       "updated_at": "Aug 23, 2026 11:12 UTC",
       "category": "Tokens",
-      "what_happened": "A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.",
-      "why_it_matters": "This discussion lays the groundwork for native token interoperability and wallet support on Kaspa.",
+      "what_happened": "A developer proposed a minimal specification interface called KCC20 for fungible token covenants on Kaspa following the Toccata hard fork, sparking community discussion on handling features like minting, burning, and wallet integration.",
+      "why_it_matters": "Establishing a shared token covenant standard is crucial for ensuring interoperability and consistency across wallets and tools as native assets emerge on Kaspa.",
       "iso_date": "2026-08-23T11:12:00+00:00",
       "slug": "fungible-token-covenant-specification-kcc20",
-      "last_updated_date": "2026-08-29",
+      "last_updated_date": "2026-08-30",
       "history": [
         {
           "date": "2026-08-23",
@@ -91,6 +91,13 @@
           "why_it_matters": "Establishing a shared token covenant standard is crucial for enabling native assets and interoperable tools across the Kaspa ecosystem.",
           "posts_count": 54,
           "views": 616
+        },
+        {
+          "date": "2026-08-29",
+          "what_happened": "A draft specification called KCC20 was proposed to establish shared covenant standards for fungible native assets on Kaspa following the Toccata hard fork. Community members discussed how to handle advanced features like minting and freezing while keeping the core interface minimal.",
+          "why_it_matters": "This discussion lays the groundwork for native token interoperability and wallet support on Kaspa.",
+          "posts_count": 57,
+          "views": 625
         }
       ],
       "whats_next": null,
