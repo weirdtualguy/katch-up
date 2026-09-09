@@ -6,6 +6,13 @@
     <description>The fastest way to understand what's happening in Kaspa, from the Kas-Smiths forum.</description>
     
         <item>
+            <title>Wallet utxo covenant id lookup</title>
+            <link>https://kas-smiths.org/t/wallet-utxo-covenant-id-lookup/142</link>
+            <description>Summary unavailable at this time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/wallet-utxo-covenant-id-lookup/142</guid>
+            <pubDate>Wed, 09 Sep 2026 10:23:50 +0000</pubDate>
+        </item>
+        <item>
             <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
             <link>https://kas-smiths.org/t/proof-gated-covenant-ownership-of-kcc20-state-worked-profile-tn10-receipts/140</link>
             <description>A developer shared a working proof-gated covenant for KCC20 state that uses a ZK-proof verified in consensus, tested on the TN10 testnet. A community member then successfully re-authored and tested the settlement gate using SilverScript v1-rc1.
