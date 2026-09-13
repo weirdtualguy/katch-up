@@ -1,6 +1,25 @@
 {
   "topics": [
     {
+      "id": 143,
+      "title": "KUSD: A Decentralized, Oracle-Free, KAS-Backed Stablecoin on L1",
+      "slug": "kusd-a-decentralized-oracle-free-kas-backed-stablecoin-on-l1",
+      "url": "https://kas-smiths.org/t/kusd-a-decentralized-oracle-free-kas-backed-stablecoin-on-l1/143",
+      "summary": "Summary unavailable at this time.",
+      "what_happened": "Summary unavailable at this time.",
+      "why_it_matters": null,
+      "whats_next": null,
+      "category": "Community",
+      "model": "none",
+      "posts_count": 1,
+      "views": 1,
+      "is_hot": false,
+      "iso_date": "2026-09-13T20:00:32.675791+00:00",
+      "updated_at": "Sep 13, 2026 20:00 UTC",
+      "last_updated_date": "2026-09-13",
+      "history": []
+    },
+    {
       "id": 142,
       "title": "Wallet utxo covenant id lookup",
       "slug": "wallet-utxo-covenant-id-lookup",
@@ -14,8 +33,8 @@
       "posts_count": 1,
       "views": 6,
       "is_hot": false,
-      "iso_date": "2026-09-13T15:18:07.864376+00:00",
-      "updated_at": "Sep 13, 2026 15:18 UTC",
+      "iso_date": "2026-09-13T20:00:38.184553+00:00",
+      "updated_at": "Sep 13, 2026 20:00 UTC",
       "last_updated_date": "2026-09-13",
       "history": []
     },
