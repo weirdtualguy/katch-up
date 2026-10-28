@@ -1,6 +1,25 @@
 {
   "topics": [
     {
+      "id": 164,
+      "title": "A KAS-backed KCC-20 Token",
+      "slug": "a-kas-backed-kcc-20-token",
+      "url": "https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164",
+      "summary": "Summary unavailable at this time.",
+      "what_happened": "Summary unavailable at this time.",
+      "why_it_matters": null,
+      "whats_next": null,
+      "category": "Community",
+      "model": "none",
+      "posts_count": 2,
+      "views": 28,
+      "is_hot": false,
+      "iso_date": "2026-10-28T03:03:36.411923+00:00",
+      "updated_at": "Oct 28, 2026 03:03 UTC",
+      "last_updated_date": "2026-10-28",
+      "history": []
+    },
+    {
       "id": 165,
       "title": "(Kaspa NFTs) A unique-asset KCC on top of KCC-1/2/23: offering a draft, a reference contract and a live implementation",
       "slug": "kaspa-nfts-a-unique-asset-kcc-on-top-of-kcc-1-2-23-offering",
@@ -14,28 +33,9 @@
       "posts_count": 1,
       "views": 2,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:00.934657+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
-      "history": []
-    },
-    {
-      "id": 164,
-      "title": "A KAS-backed KCC-20 Token",
-      "slug": "a-kas-backed-kcc-20-token",
-      "url": "https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164",
-      "summary": "Summary unavailable at this time.",
-      "what_happened": "Summary unavailable at this time.",
-      "why_it_matters": null,
-      "whats_next": null,
-      "category": "Community",
-      "model": "none",
-      "posts_count": 1,
-      "views": 26,
-      "is_hot": false,
-      "iso_date": "2026-10-27T21:36:06.121595+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:03:41.621130+00:00",
+      "updated_at": "Oct 28, 2026 03:03 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -50,11 +50,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 15,
+      "views": 16,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:11.573618+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:03:46.821373+00:00",
+      "updated_at": "Oct 28, 2026 03:03 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -71,9 +71,9 @@
       "posts_count": 1,
       "views": 19,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:16.737592+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:03:52.051745+00:00",
+      "updated_at": "Oct 28, 2026 03:03 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -90,9 +90,9 @@
       "posts_count": 1,
       "views": 27,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:22.235989+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:03:57.236047+00:00",
+      "updated_at": "Oct 28, 2026 03:03 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -109,9 +109,9 @@
       "posts_count": 1,
       "views": 25,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:27.413271+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:04:02.452108+00:00",
+      "updated_at": "Oct 28, 2026 03:04 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -128,9 +128,9 @@
       "posts_count": 6,
       "views": 75,
       "is_hot": true,
-      "iso_date": "2026-10-27T21:36:32.732827+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:04:07.678878+00:00",
+      "updated_at": "Oct 28, 2026 03:04 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -147,9 +147,9 @@
       "posts_count": 1,
       "views": 28,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:38.087656+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:04:12.965661+00:00",
+      "updated_at": "Oct 28, 2026 03:04 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -166,9 +166,9 @@
       "posts_count": 7,
       "views": 54,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:43.278563+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:04:18.300264+00:00",
+      "updated_at": "Oct 28, 2026 03:04 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
@@ -185,9 +185,9 @@
       "posts_count": 3,
       "views": 31,
       "is_hot": false,
-      "iso_date": "2026-10-27T21:36:48.439383+00:00",
-      "updated_at": "Oct 27, 2026 21:36 UTC",
-      "last_updated_date": "2026-10-27",
+      "iso_date": "2026-10-28T03:04:23.498813+00:00",
+      "updated_at": "Oct 28, 2026 03:04 UTC",
+      "last_updated_date": "2026-10-28",
       "history": []
     },
     {
