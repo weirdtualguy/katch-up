@@ -6,74 +6,74 @@
     <description>The fastest way to understand what's happening in Kaspa, from the Kas-Smiths forum.</description>
     
         <item>
+            <title>I suggest collectively referring to protocols such as &quot;KCC20&quot; as &quot;Super Covenant.&quot;</title>
+            <link>https://kas-smiths.org/t/i-suggest-collectively-referring-to-protocols-such-as-kcc20-as-super-covenant/172</link>
+            <description>Summary unavailable at this time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/i-suggest-collectively-referring-to-protocols-such-as-kcc20-as-super-covenant/172</guid>
+            <pubDate>Wed, 25 Nov 2026 16:27:44 +0000</pubDate>
+        </item>
+        <item>
             <title>Inter-covenant communication with dynamic dispatch</title>
             <link>https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:00 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:27:49 +0000</pubDate>
         </item>
         <item>
             <title>Swaps for AI agents on Kaspa L1</title>
             <link>https://kas-smiths.org/t/swaps-for-ai-agents-on-kaspa-l1/169</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/swaps-for-ai-agents-on-kaspa-l1/169</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:05 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:27:54 +0000</pubDate>
         </item>
         <item>
             <title>Vprogs and covenant tokens</title>
             <link>https://kas-smiths.org/t/vprogs-and-covenant-tokens/168</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/vprogs-and-covenant-tokens/168</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:10 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:27:59 +0000</pubDate>
         </item>
         <item>
             <title>Swaps on Kaspa L1: 8 ways to trade KAS and tokens</title>
             <link>https://kas-smiths.org/t/swaps-on-kaspa-l1-8-ways-to-trade-kas-and-tokens/167</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/swaps-on-kaspa-l1-8-ways-to-trade-kas-and-tokens/167</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:15 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:05 +0000</pubDate>
         </item>
         <item>
             <title>(Kaspa NFTs) A unique-asset KCC on top of KCC-1/2/23: offering a draft, a reference contract and a live implementation</title>
             <link>https://kas-smiths.org/t/kaspa-nfts-a-unique-asset-kcc-on-top-of-kcc-1-2-23-offering-a-draft-a-reference-contract-and-a-live-implementation/165</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-nfts-a-unique-asset-kcc-on-top-of-kcc-1-2-23-offering-a-draft-a-reference-contract-and-a-live-implementation/165</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:20 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:10 +0000</pubDate>
         </item>
         <item>
             <title>A KAS-backed KCC-20 Token</title>
             <link>https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:25 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:15 +0000</pubDate>
         </item>
         <item>
             <title>Pay-to-Public-Key-Hash via P2SH</title>
             <link>https://kas-smiths.org/t/pay-to-public-key-hash-via-p2sh/163</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/pay-to-public-key-hash-via-p2sh/163</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:30 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:20 +0000</pubDate>
         </item>
         <item>
             <title>High-BPS Covenant State Pressure: UTXO Contention, Storage Mass, and Settlement Frequency — Seeking Corrections</title>
             <link>https://kas-smiths.org/t/high-bps-covenant-state-pressure-utxo-contention-storage-mass-and-settlement-frequency-seeking-corrections/160</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/high-bps-covenant-state-pressure-utxo-contention-storage-mass-and-settlement-frequency-seeking-corrections/160</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:35 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:25 +0000</pubDate>
         </item>
         <item>
             <title>Kaspa Privacy Initiative: exploring optional privacy for native KAS</title>
             <link>https://kas-smiths.org/t/kaspa-privacy-initiative-exploring-optional-privacy-for-native-kas/156</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-privacy-initiative-exploring-optional-privacy-for-native-kas/156</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:40 +0000</pubDate>
-        </item>
-        <item>
-            <title>Multi-leaf collection covenant</title>
-            <link>https://kas-smiths.org/t/multi-leaf-collection-covenant/155</link>
-            <description>Summary unavailable at this time.</description>
-            <guid isPermaLink="true">https://kas-smiths.org/t/multi-leaf-collection-covenant/155</guid>
-            <pubDate>Wed, 25 Nov 2026 01:45:45 +0000</pubDate>
+            <pubDate>Wed, 25 Nov 2026 16:28:30 +0000</pubDate>
         </item>
         <item>
             <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
