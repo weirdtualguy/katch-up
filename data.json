@@ -1,6 +1,25 @@
 {
   "topics": [
     {
+      "id": 171,
+      "title": "Inter-covenant communication with dynamic dispatch",
+      "slug": "inter-covenant-communication-with-dynamic-dispatch",
+      "url": "https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171",
+      "summary": "Summary unavailable at this time.",
+      "what_happened": "Summary unavailable at this time.",
+      "why_it_matters": null,
+      "whats_next": null,
+      "category": "Community",
+      "model": "none",
+      "posts_count": 1,
+      "views": 9,
+      "is_hot": false,
+      "iso_date": "2026-11-25T01:45:00.446432+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
+      "history": []
+    },
+    {
       "id": 169,
       "title": "Swaps for AI agents on Kaspa L1",
       "slug": "swaps-for-ai-agents-on-kaspa-l1",
@@ -14,9 +33,9 @@
       "posts_count": 1,
       "views": 13,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:42:53.216452+00:00",
-      "updated_at": "Nov 24, 2026 16:42 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:05.428643+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -31,11 +50,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 12,
+      "views": 13,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:42:58.517927+00:00",
-      "updated_at": "Nov 24, 2026 16:42 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:10.397799+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -52,9 +71,9 @@
       "posts_count": 2,
       "views": 16,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:03.789123+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:15.393505+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -71,9 +90,9 @@
       "posts_count": 2,
       "views": 33,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:09.052690+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:20.360544+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -90,9 +109,9 @@
       "posts_count": 2,
       "views": 48,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:14.315401+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:25.351374+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -109,9 +128,9 @@
       "posts_count": 1,
       "views": 19,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:19.632011+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:30.330739+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -128,9 +147,9 @@
       "posts_count": 1,
       "views": 25,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:24.885507+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:35.287977+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -147,9 +166,9 @@
       "posts_count": 1,
       "views": 37,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:30.158798+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:40.259135+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
@@ -164,30 +183,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 30,
+      "views": 31,
       "is_hot": false,
-      "iso_date": "2026-11-24T16:43:35.420332+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
-      "history": []
-    },
-    {
-      "id": 150,
-      "title": "KCC-23: Convention for Binding Covenant Metadata to a Covenant ID",
-      "slug": "kcc-23-convention-for-binding-covenant-metadata-to-a",
-      "url": "https://kas-smiths.org/t/kcc-23-convention-for-binding-covenant-metadata-to-a-covenant-id/150",
-      "summary": "Summary unavailable at this time.",
-      "what_happened": "Summary unavailable at this time.",
-      "why_it_matters": null,
-      "whats_next": null,
-      "category": "Community",
-      "model": "none",
-      "posts_count": 6,
-      "views": 87,
-      "is_hot": true,
-      "iso_date": "2026-11-24T16:43:40.676897+00:00",
-      "updated_at": "Nov 24, 2026 16:43 UTC",
-      "last_updated_date": "2026-11-24",
+      "iso_date": "2026-11-25T01:45:45.234013+00:00",
+      "updated_at": "Nov 25, 2026 01:45 UTC",
+      "last_updated_date": "2026-11-25",
       "history": []
     },
     {
