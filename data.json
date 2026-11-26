@@ -1,6 +1,25 @@
 {
   "topics": [
     {
+      "id": 173,
+      "title": "Kaspa covenants can pay miners to execute themselves (CATMA draft)",
+      "slug": "kaspa-covenants-can-pay-miners-to-execute-themselves-catma",
+      "url": "https://kas-smiths.org/t/kaspa-covenants-can-pay-miners-to-execute-themselves-catma-draft/173",
+      "summary": "Summary unavailable at this time.",
+      "what_happened": "Summary unavailable at this time.",
+      "why_it_matters": null,
+      "whats_next": null,
+      "category": "Community",
+      "model": "none",
+      "posts_count": 1,
+      "views": 7,
+      "is_hot": false,
+      "iso_date": "2026-11-26T01:19:03.217738+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
+      "history": []
+    },
+    {
       "id": 172,
       "title": "I suggest collectively referring to protocols such as \"KCC20\" as \"Super Covenant.\"",
       "slug": "i-suggest-collectively-referring-to-protocols-such-as-kcc20",
@@ -12,11 +31,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 3,
+      "views": 5,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:27:44.292005+00:00",
-      "updated_at": "Nov 25, 2026 16:27 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:08.396519+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -31,11 +50,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 16,
+      "views": 24,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:27:49.501643+00:00",
-      "updated_at": "Nov 25, 2026 16:27 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:13.573318+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -52,9 +71,9 @@
       "posts_count": 1,
       "views": 15,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:27:54.720061+00:00",
-      "updated_at": "Nov 25, 2026 16:27 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:18.725561+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -69,11 +88,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 14,
+      "views": 16,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:27:59.980043+00:00",
-      "updated_at": "Nov 25, 2026 16:27 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:23.866036+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -88,11 +107,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 2,
-      "views": 17,
+      "views": 18,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:28:05.091759+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:29.028603+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -109,9 +128,9 @@
       "posts_count": 2,
       "views": 34,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:28:10.178528+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:34.175738+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -128,9 +147,9 @@
       "posts_count": 2,
       "views": 49,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:28:15.251975+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:39.330571+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -145,11 +164,11 @@
       "category": "Community",
       "model": "none",
       "posts_count": 1,
-      "views": 19,
+      "views": 20,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:28:20.270483+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:44.460836+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
@@ -166,28 +185,9 @@
       "posts_count": 1,
       "views": 25,
       "is_hot": false,
-      "iso_date": "2026-11-25T16:28:25.564069+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
-      "history": []
-    },
-    {
-      "id": 156,
-      "title": "Kaspa Privacy Initiative: exploring optional privacy for native KAS",
-      "slug": "kaspa-privacy-initiative-exploring-optional-privacy-for",
-      "url": "https://kas-smiths.org/t/kaspa-privacy-initiative-exploring-optional-privacy-for-native-kas/156",
-      "summary": "Summary unavailable at this time.",
-      "what_happened": "Summary unavailable at this time.",
-      "why_it_matters": null,
-      "whats_next": null,
-      "category": "Community",
-      "model": "none",
-      "posts_count": 1,
-      "views": 38,
-      "is_hot": false,
-      "iso_date": "2026-11-25T16:28:30.748497+00:00",
-      "updated_at": "Nov 25, 2026 16:28 UTC",
-      "last_updated_date": "2026-11-25",
+      "iso_date": "2026-11-26T01:19:49.592238+00:00",
+      "updated_at": "Nov 26, 2026 01:19 UTC",
+      "last_updated_date": "2026-11-26",
       "history": []
     },
     {
