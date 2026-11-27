@@ -6,74 +6,74 @@
     <description>The fastest way to understand what's happening in Kaspa, from the Kas-Smiths forum.</description>
     
         <item>
+            <title>Inter-covenant communication with dynamic dispatch</title>
+            <link>https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</link>
+            <description>Summary unavailable at this time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</guid>
+            <pubDate>Fri, 27 Nov 2026 15:50:02 +0000</pubDate>
+        </item>
+        <item>
+            <title>Plafond: covenant-enforced spending limits for AI agents (testnet-10, open for review)</title>
+            <link>https://kas-smiths.org/t/plafond-covenant-enforced-spending-limits-for-ai-agents-testnet-10-open-for-review/174</link>
+            <description>Summary unavailable at this time.</description>
+            <guid isPermaLink="true">https://kas-smiths.org/t/plafond-covenant-enforced-spending-limits-for-ai-agents-testnet-10-open-for-review/174</guid>
+            <pubDate>Fri, 27 Nov 2026 15:50:07 +0000</pubDate>
+        </item>
+        <item>
             <title>Kaspa covenants can pay miners to execute themselves (CATMA draft)</title>
             <link>https://kas-smiths.org/t/kaspa-covenants-can-pay-miners-to-execute-themselves-catma-draft/173</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-covenants-can-pay-miners-to-execute-themselves-catma-draft/173</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:28 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:12 +0000</pubDate>
         </item>
         <item>
             <title>I suggest collectively referring to protocols such as &quot;KCC20&quot; as &quot;Super Covenant.&quot;</title>
             <link>https://kas-smiths.org/t/i-suggest-collectively-referring-to-protocols-such-as-kcc20-as-super-covenant/172</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/i-suggest-collectively-referring-to-protocols-such-as-kcc20-as-super-covenant/172</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:33 +0000</pubDate>
-        </item>
-        <item>
-            <title>Inter-covenant communication with dynamic dispatch</title>
-            <link>https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</link>
-            <description>Summary unavailable at this time.</description>
-            <guid isPermaLink="true">https://kas-smiths.org/t/inter-covenant-communication-with-dynamic-dispatch/171</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:39 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:17 +0000</pubDate>
         </item>
         <item>
             <title>Swaps for AI agents on Kaspa L1</title>
             <link>https://kas-smiths.org/t/swaps-for-ai-agents-on-kaspa-l1/169</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/swaps-for-ai-agents-on-kaspa-l1/169</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:44 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:23 +0000</pubDate>
         </item>
         <item>
             <title>Vprogs and covenant tokens</title>
             <link>https://kas-smiths.org/t/vprogs-and-covenant-tokens/168</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/vprogs-and-covenant-tokens/168</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:49 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:28 +0000</pubDate>
         </item>
         <item>
             <title>Swaps on Kaspa L1: 8 ways to trade KAS and tokens</title>
             <link>https://kas-smiths.org/t/swaps-on-kaspa-l1-8-ways-to-trade-kas-and-tokens/167</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/swaps-on-kaspa-l1-8-ways-to-trade-kas-and-tokens/167</guid>
-            <pubDate>Fri, 27 Nov 2026 01:17:54 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:33 +0000</pubDate>
         </item>
         <item>
             <title>(Kaspa NFTs) A unique-asset KCC on top of KCC-1/2/23: offering a draft, a reference contract and a live implementation</title>
             <link>https://kas-smiths.org/t/kaspa-nfts-a-unique-asset-kcc-on-top-of-kcc-1-2-23-offering-a-draft-a-reference-contract-and-a-live-implementation/165</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/kaspa-nfts-a-unique-asset-kcc-on-top-of-kcc-1-2-23-offering-a-draft-a-reference-contract-and-a-live-implementation/165</guid>
-            <pubDate>Fri, 27 Nov 2026 01:18:00 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:38 +0000</pubDate>
         </item>
         <item>
             <title>A KAS-backed KCC-20 Token</title>
             <link>https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/a-kas-backed-kcc-20-token/164</guid>
-            <pubDate>Fri, 27 Nov 2026 01:18:05 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:44 +0000</pubDate>
         </item>
         <item>
             <title>Pay-to-Public-Key-Hash via P2SH</title>
             <link>https://kas-smiths.org/t/pay-to-public-key-hash-via-p2sh/163</link>
             <description>Summary unavailable at this time.</description>
             <guid isPermaLink="true">https://kas-smiths.org/t/pay-to-public-key-hash-via-p2sh/163</guid>
-            <pubDate>Fri, 27 Nov 2026 01:18:11 +0000</pubDate>
-        </item>
-        <item>
-            <title>High-BPS Covenant State Pressure: UTXO Contention, Storage Mass, and Settlement Frequency — Seeking Corrections</title>
-            <link>https://kas-smiths.org/t/high-bps-covenant-state-pressure-utxo-contention-storage-mass-and-settlement-frequency-seeking-corrections/160</link>
-            <description>Summary unavailable at this time.</description>
-            <guid isPermaLink="true">https://kas-smiths.org/t/high-bps-covenant-state-pressure-utxo-contention-storage-mass-and-settlement-frequency-seeking-corrections/160</guid>
-            <pubDate>Fri, 27 Nov 2026 01:18:16 +0000</pubDate>
+            <pubDate>Fri, 27 Nov 2026 15:50:49 +0000</pubDate>
         </item>
         <item>
             <title>Proof-gated covenant ownership of KCC20 state: worked profile + TN10 receipts</title>
